@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" class="main13 cNVVFRn" component="$model/UI2/system/components/justep/window/window" design="device:mobile;" xid="window" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cNVVFRn" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/button/checkbox,$model/UI2/system/components/justep/scrollView/scrollView,$model/UI2/system/components/justep/row/row,$model/UI2/system/components/justep/list/list,$model/UI2/system/components/justep/titleBar/titleBar,$model/UI2/system/components/justep/panel/child,$model/UI2/system/components/justep/window/window,$model/UI2/system/components/justep/data/baasData,$model/UI2/system/components/justep/panel/panel,">
+  <xhtml:style xmlns:xhtml="http://www.w3.org/1999/xhtml">.bg-white.cNVVFRn{background-color: rgb(255, 255, 255)} .text-black.cNVVFRn{color: rgb(85, 85, 85)} .x-titlebar.cNVVFRn{background-color: rgb(255, 68, 0)} .x-titlebar-right.cNVVFRn .btn.cNVVFRn i.cNVVFRn{font-size: 24px} .row.cNVVFRn{margin: 0} .x-cards.cNVVFRn{padding-top: 15px} .tb-box.cNVVFRn{margin-bottom: 10px; border-top: 1px solid rgb(220, 220, 220); border-bottom: 1px solid rgb(220, 220, 220)} .tb-del-line.cNVVFRn{text-decoration: line-through} .x-card.cNVVFRn .panel-heading.cNVVFRn{padding: 5px 15px} .x-card.cNVVFRn .panel-heading.cNVVFRn i.cNVVFRn{margin-right: 13px} .tb-img-shop.cNVVFRn{width: 20px; height: 20px} .tb-img-good.cNVVFRn{width: 93%; height: 100px} .tb-nomargin.cNVVFRn{margin: 0} .tb-nopadding.cNVVFRn{padding: 0} .tb-goodList.cNVVFRn{margin-bottom: 5px} .tb-goodList.cNVVFRn:last-child{margin-bottom: 0px} .tb-goodList.cNVVFRn .x-col.cNVVFRn:last-child{position: relative} .tb-goodList.cNVVFRn .h5.cNVVFRn{height: 30px; overflow: hidden; text-overflow: ellipsis} .tb-goodList.cNVVFRn .h6.cNVVFRn{margin-top: 3px; margin-bottom: 3px} .tb-numberOperation.cNVVFRn{width: 100%; position: absolute; bottom: 0} .tb-numberOperation.cNVVFRn .btn.cNVVFRn{border-radius: 0} .tb-numberOperation.cNVVFRn span.cNVVFRn{padding: 4px 15px; border-top: 1px solid rgb(225, 225, 225); border-bottom: 1px solid rgb(225, 225, 225)} .x-panel-bottom.cNVVFRn .h4.cNVVFRn{margin: 5px 0} .tb-settlement.cNVVFRn{line-height: 40px; background-color: rgb(253, 80, 1); color: rgb(255, 255, 255); font-size: 16px}</xhtml:style>  
+  <div component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" __cid="cNVVFRn" class="cNVVFRn"></div>  
+  <div component="$model/UI2/system/components/justep/panel/panel" class="x-panel x-full x-card x-has-iosstatusbar pc6vMnqq-iosstatusbar cNVVFRn" data-bind="component:{name:'$model/UI2/system/components/justep/panel/panel'}" __cid="cNVVFRn"> 
+    <div class="x-panel-top cNVVFRn" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" data-config="{&quot;height&quot;:48}" __cid="cNVVFRn"> 
+      <div component="$model/UI2/system/components/justep/titleBar/titleBar" class="x-titlebar cNVVFRn" data-bind="component:{name:'$model/UI2/system/components/justep/titleBar/titleBar'}" __cid="cNVVFRn"> 
+        <div class="x-titlebar-left cNVVFRn" __cid="cNVVFRn">
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-only-icon cNVVFRn" xid="backBtn" bind-visible="$model.calculateData.val(&quot;isBack&quot;)==1" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:backBtnClick" data-config="{&quot;icon&quot;:&quot;icon-chevron-left&quot;,&quot;label&quot;:&quot;button&quot;}" __cid="cNVVFRn"> 
+            <i xid="i1" class="icon-chevron-left cNVVFRn" __cid="cNVVFRn"/>  
+            <span xid="span3" __cid="cNVVFRn" class="cNVVFRn"/>
+          </a>
+        </div>  
+        <div class="x-titlebar-title cNVVFRn" __cid="cNVVFRn"> 
+          <span xid="span1" __cid="cNVVFRn" class="cNVVFRn">购物车（</span>  
+          <span xid="span11" bind-text="goodsData.count()" __cid="cNVVFRn" class="cNVVFRn"/>  
+          <span xid="span2" __cid="cNVVFRn" class="cNVVFRn">）</span> 
+        </div>  
+        <div class="x-titlebar-right  cNVVFRn" __cid="cNVVFRn">
+          <div class="empty cNVVFRn" __cid="cNVVFRn"/>
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-only-icon cNVVFRn" xid="delBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:delBtnClick" data-config="{&quot;icon&quot;:&quot;icon-ios7-trash-outline&quot;,&quot;label&quot;:&quot;button&quot;}" __cid="cNVVFRn"> 
+            <i xid="i4" class="icon-ios7-trash-outline cNVVFRn" __cid="cNVVFRn"/>  
+            <span xid="span20" __cid="cNVVFRn" class="cNVVFRn"/> 
+          </a>
+        </div> 
+      </div> 
+    </div>  
+    <div xid="content" class="x-panel-content x-scroll-view x-cards cNVVFRn" supportpulldown="true" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cNVVFRn"> 
+      <div class="x-scroll cNVVFRn" component="$model/UI2/system/components/justep/scrollView/scrollView" xid="scrollView" data-bind="component:{name:'$model/UI2/system/components/justep/scrollView/scrollView'}" data-config="{&quot;pullUpLabel&quot;:&quot; &quot;}" __cid="cNVVFRn"> 
+        <div class="x-content-center x-pull-down container cNVVFRn" xid="div8" __cid="cNVVFRn"> 
+          <i class="x-pull-down-img glyphicon x-icon-pull-down cNVVFRn" xid="i2" __cid="cNVVFRn"/>  
+          <span class="x-pull-down-label cNVVFRn" xid="span9" __cid="cNVVFRn">下拉刷新...</span> 
+        </div>  
+        <div class="x-scroll-content cNVVFRn" xid="div7" __cid="cNVVFRn"> 
+          <div component="$model/UI2/system/components/justep/list/list" class="x-list cNVVFRn" xid="shopList" dataItemAlias="shopRow" data-bind="component:{name:'$model/UI2/system/components/justep/list/list'}" data-config="{&quot;autoLoad&quot;:true,&quot;data&quot;:&quot;shopData&quot;,&quot;disableInfiniteLoad&quot;:true,&quot;disablePullToRefresh&quot;:true,&quot;limit&quot;:-1}" __cid="cNVVFRn"> 
+            <ul class="x-list-template x-min-height hide cNVVFRn" xid="listTemplateUl1" componentname="$UI/system/components/justep/list/list#listTemplateUl" id="undefined_listTemplateUl1" bind-foreach="{data:$model.foreach_shopList($element),afterRender:$model.foreach_afterRender_shopList.bind($model,$element),as:'shopRow'}" __cid="cNVVFRn"> 
+              <li xid="li1" class="panel panel-default x-card tb-box cNVVFRn" __cid="cNVVFRn"> 
+                <div class="panel-heading cNVVFRn" __cid="cNVVFRn"> 
+                  <i xid="i5" class="icon-chevron-right cNVVFRn" __cid="cNVVFRn"/>  
+                  <img src="" alt="" xid="image3" bind-attr-src="$model.getImageUrl(val(&quot;fShopImg&quot;))" class="img-circle tb-img-shop cNVVFRn" __cid="cNVVFRn"/>  
+                  <span xid="span4" bind-text="$model.shopinfo.ref(&quot;username&quot;)" __cid="cNVVFRn" class="cNVVFRn"/> 
+                </div>  
+                <div component="$model/UI2/system/components/justep/list/list" class="x-list bg-white cNVVFRn" xid="goodsList" data-bind="component:{name:'$model/UI2/system/components/justep/list/list'}" data-config="{&quot;data&quot;:&quot;goodsData&quot;,&quot;disableInfiniteLoad&quot;:true,&quot;disablePullToRefresh&quot;:true,&quot;filter&quot;:&quot;$row.val('fShopID')==shopRow.val('id')&quot;}" __cid="cNVVFRn"> 
+                  <ul class="x-list-template x-min-height hide cNVVFRn" xid="listTemplateUl4" componentname="$UI/system/components/justep/list/list#listTemplateUl" id="undefined_listTemplateUl4" bind-foreach="{data:$model.foreach_goodsList($element),afterRender:$model.foreach_afterRender_goodsList.bind($model,$element)}" __cid="cNVVFRn"> 
+                    <li xid="li4" class="x-min-height tb-goodList cNVVFRn" componentname="li(html)" id="undefined_li4" __cid="cNVVFRn"> 
+                      <div component="$model/UI2/system/components/justep/row/row" class="x-row cNVVFRn" data-bind="component:{name:'$model/UI2/system/components/justep/row/row'}" __cid="cNVVFRn"> 
+                        <div class="x-col x-col-fixed x-col-center cNVVFRn" xid="col1" style="width:auto;" __cid="cNVVFRn">
+                          <span component="$model/UI2/system/components/justep/button/checkbox" class="x-checkbox x-radio choose cNVVFRn" xid="checkbox2" checkedValue="1" data-config="{&quot;checked&quot;:false,&quot;checkedValue&quot;:&quot;1&quot;,&quot;disabled&quot;:false}" data-bind="component:{ref:ref('fChoose'),name:'$model/UI2/system/components/justep/button/checkbox'}" __cid="cNVVFRn">
+                            <xhtml:input xmlns:xhtml="http://www.w3.org/1999/xhtml" type="checkbox" __cid="cNVVFRn" class="cNVVFRn"/>
+                            <xhtml:label xmlns:xhtml="http://www.w3.org/1999/xhtml" __cid="cNVVFRn" class="cNVVFRn"/>
+                          </span>
+                        </div>  
+                        <div class="x-col x-col-fixed tb-nopadding cNVVFRn" xid="col2" style="width:90px;" __cid="cNVVFRn">
+                          <img src="" alt="" xid="image1" bind-attr-src="$model.getImageUrl( $model.shopinfo.val(&quot;picture&quot;))" class="tb-img-good cNVVFRn" bind-click="listClick" __cid="cNVVFRn"/>
+                        </div>  
+                        <div class="x-col  tb-nopadding cNVVFRn" xid="col3" __cid="cNVVFRn">
+                          <span bind-text="$model.shopinfo.ref(&quot;shopname&quot;)" class="x-flex text-black h5 tb-nomargin cNVVFRn" xid="span26" __cid="cNVVFRn"/>  
+                          <div class="text-muted h6 cNVVFRn" xid="div6" __cid="cNVVFRn"> 
+                            <span xid="span27" __cid="cNVVFRn" class="cNVVFRn">类型:</span>  
+                            <span bind-text="$model.shopinfo.ref(&quot;categoryid&quot;)" xid="span6" __cid="cNVVFRn" class="cNVVFRn"/>  
+                            <span xid="span7" __cid="cNVVFRn" class="cNVVFRn">;</span> 
+                          </div>  
+                          <div class="text-muted cNVVFRn" xid="div5" __cid="cNVVFRn"> 
+                            <span xid="span22" class="text-danger cNVVFRn" __cid="cNVVFRn">￥</span>  
+                            <span xid="span28" bind-text="$model.shopinfo.ref(&quot;price&quot;)" class="h4 text-danger cNVVFRn" __cid="cNVVFRn"/> 
+                          </div>  
+                          <div class="tb-numberOperation cNVVFRn" xid="div4" __cid="cNVVFRn"> 
+                            <a component="$model/UI2/system/components/justep/button/button" class="btn x-gray btn-sm btn-only-icon pull-left cNVVFRn" xid="button1" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:reductionBtnClick" data-config="{&quot;icon&quot;:&quot;icon-android-remove&quot;,&quot;label&quot;:&quot;button&quot;}" __cid="cNVVFRn"> 
+                              <i xid="i3" class="icon-android-remove cNVVFRn" __cid="cNVVFRn"/>  
+                              <span xid="span13" __cid="cNVVFRn" class="cNVVFRn"/>
+                            </a>  
+                            <span bind-text="ref('fNumber')" class="pull-left cNVVFRn" __cid="cNVVFRn"/>
+                            <a component="$model/UI2/system/components/justep/button/button" class="btn x-gray btn-sm btn-only-icon pull-left cNVVFRn" xid="button2" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:addBtnClick" data-config="{&quot;icon&quot;:&quot;icon-android-add&quot;,&quot;label&quot;:&quot;button&quot;}" __cid="cNVVFRn"> 
+                              <i xid="i6" class="icon-android-add cNVVFRn" __cid="cNVVFRn"/>  
+                              <span xid="span29" __cid="cNVVFRn" class="cNVVFRn"/>
+                            </a> 
+                          </div>
+                        </div>
+                      </div>
+                    </li> 
+                  </ul> 
+                </div> 
+              </li> 
+            </ul> 
+          </div> 
+        </div>  
+        <div class="x-content-center x-pull-up cNVVFRn" xid="div7" __cid="cNVVFRn"> 
+          <span class="x-pull-up-label cNVVFRn" xid="span8" __cid="cNVVFRn"/> 
+        </div> 
+      </div> 
+    </div>  
+    <div class="x-panel-bottom cNVVFRn" xid="bottom1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cNVVFRn"> 
+      <div component="$model/UI2/system/components/justep/row/row" class="x-row tb-nopadding cNVVFRn" xid="row2" data-bind="component:{name:'$model/UI2/system/components/justep/row/row'}" __cid="cNVVFRn"> 
+        <div class="x-col x-col-20 x-col-center cNVVFRn" xid="col4" __cid="cNVVFRn">
+          <span component="$model/UI2/system/components/justep/button/checkbox" class="x-checkbox cNVVFRn" xid="allChoose" label="全选" checked="false" data-config="{&quot;checked&quot;:false,&quot;disabled&quot;:false,&quot;label&quot;:&quot;全选&quot;}" data-bind="component:{name:'$model/UI2/system/components/justep/button/checkbox'}" data-events="onChange:allChooseChange" __cid="cNVVFRn">
+            <xhtml:input xmlns:xhtml="http://www.w3.org/1999/xhtml" type="checkbox" __cid="cNVVFRn" class="cNVVFRn"/>
+            <xhtml:label xmlns:xhtml="http://www.w3.org/1999/xhtml" __cid="cNVVFRn" class="cNVVFRn">全选</xhtml:label>
+          </span>
+        </div>  
+        <div class="x-col cNVVFRn" xid="col8" __cid="cNVVFRn">
+          <div class="text-right cNVVFRn" xid="div9" __cid="cNVVFRn"> 
+            <span xid="span15" class="text-muted cNVVFRn" __cid="cNVVFRn">合计：</span>  
+            <span xid="span17" class="text-danger cNVVFRn" __cid="cNVVFRn">￥</span>  
+            <span xid="sum" class="h4 text-danger cNVVFRn" bind-text="calculateData.ref('allSum')" __cid="cNVVFRn"/>
+          </div>  
+          <div class="text-right cNVVFRn" xid="div10" __cid="cNVVFRn"> 
+            <span xid="span16" __cid="cNVVFRn" class="cNVVFRn">不含运费</span>
+          </div>
+        </div>  
+        <div class="x-col x-col-33 text-center tb-settlement cNVVFRn" xid="col9" bind-click="settlementClick" __cid="cNVVFRn">
+          <span xid="span10" __cid="cNVVFRn" class="cNVVFRn">结算(</span>  
+          <span xid="number" class="allNumber cNVVFRn" bind-text="calculateData.ref('allNumber')" __cid="cNVVFRn"/>  
+          <span xid="span14" __cid="cNVVFRn" class="cNVVFRn">)</span>
+        </div>
+      </div>
+    </div>  
+    <style __cid="cNVVFRn" class="cNVVFRn">.x-panel.pc6vMnqq-iosstatusbar &gt;.x-panel-top {height: 48px;}.x-panel.pc6vMnqq-iosstatusbar &gt;.x-panel-content { top: 48px;bottom: nullpx;}.x-panel.pc6vMnqq-iosstatusbar &gt;.x-panel-bottom {height: nullpx;}.iosstatusbar .x-panel.pc6vMnqq-iosstatusbar &gt;.x-panel-top,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pc6vMnqq-iosstatusbar &gt;.x-panel-top {height: 68px;}.iosstatusbar .x-panel.pc6vMnqq-iosstatusbar &gt;.x-panel-content,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pc6vMnqq-iosstatusbar &gt;.x-panel-content { top: 68px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pc6vMnqq-iosstatusbar &gt;.x-panel-top {height: 48px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pc6vMnqq-iosstatusbar &gt;.x-panel-content {top: 48px;}</style>
+  </div> 
+</div>

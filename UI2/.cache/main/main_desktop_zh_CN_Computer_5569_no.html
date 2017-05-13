@@ -1,0 +1,724 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<html xmlns="http://www.w3.org/1999/xhtml" style="width:100%;height:100%" class="no-js">  
+  <head xmlns=""> 
+    <meta charset="utf-8"/>  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"/>  
+    <meta name="apple-mobile-web-app-capable" content="yes"/>  
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>  
+    <meta name="format-detection" content="telephone=no"/>  
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>  
+    <script src="../../v_5569_nol_zh_CNs_desktopd_pc/system/lib/base/modernizr-2.8.3.min.js"/>  
+    <script id="__varReplace">
+    	
+    	    	window.__justep = window.__justep || {};
+				window.__justep.isDebug = false;
+				window.__justep.__packageMode = "1";
+				window.__justep.__isPackage = false;;
+				window.__justep.url = location.href;
+				window.__justep.versionInfo = {};
+		 
+    	</script>  
+    <script id="__updateVersion">
+        
+				(function(url, mode){
+					if (("@"+"mode@") === mode) mode = "3";
+					if (("@"+"versionUrl@") === url) url = "system/service/common/app.j";
+					if ((mode!=="1" &amp;&amp; (mode!="2") &amp;&amp; (mode!="3"))) return;
+					var async = (mode=="1");
+					var x5Version = "noApp";
+					var x5AppAgents = /x5app\/([0-9.]*)/.exec(navigator.userAgent);
+					if(x5AppAgents &amp;&amp; x5AppAgents.length &gt; 1){
+					   	x5Version = x5AppAgents[1] || "";
+					} 
+					function createXhr(){
+						try {	
+							return new XMLHttpRequest();
+						}catch (tryMS) {	
+							var version = ["MSXML2.XMLHttp.6.0",
+							               "MSXML2.XMLHttp.3.0",
+							               "MSXML2.XMLHttp",
+							               "Miscrosoft.XMLHTTP"];
+							for(var i = 0; i &lt; version.length; i++){
+								try{
+							    	return new ActiveXObject(version[i]);
+								}catch(e){}
+							}
+						}
+						throw new Error("您的系统或浏览器不支持XHR对象！");
+					}
+					
+					function createGuid(){	
+						var guid = '';	
+						for (var i = 1; i &lt;= 32; i++){		
+							var n = Math.floor(Math.random()*16.0).toString(16);		
+							guid += n;		
+							if((i==8)||(i==12)||(i==16)||(i==20))			
+								guid += '-';	
+						}	
+						return guid;
+					}
+					
+					function parseUrl(href){
+						href = href.split("#")[0];
+						var items = href.split("?");
+						href = items[0];
+						var query = items[1] || "";
+						items = href.split("/");
+						var baseItems = [];
+						var pathItems = [];
+						var isPath = false;
+						for (var i=0; i&lt;items.length; i++){
+							if (mode == "3"){
+								if (items[i] &amp;&amp; (items[i].indexOf("v_") === 0) 
+										&amp;&amp; (items[i].indexOf("l_") !== -1)
+										&amp;&amp; (items[i].indexOf("s_") !== -1)
+										&amp;&amp; (items[i].indexOf("d_") !== -1)
+										|| (items[i]=="v_")){
+									isPath = true;
+									continue;
+								}
+							}else{
+								if (items[i] &amp;&amp; (items[i].indexOf("v-")===0) &amp;&amp; (items[i].charAt(items[i].length-1)=="-") ){
+									isPath = true;
+									continue;
+								}
+							}
+							if (isPath){
+								pathItems.push(items[i]);
+							}else{
+								baseItems.push(items[i]);	
+							}
+							
+						}
+						var base = baseItems.join("/");
+						if (base.charAt(base.length-1)!=="/") base += "/";
+						
+						var path = pathItems.join("/");
+						if (path.charAt(0) !== "/") path = "/" + path;
+						return [base, path, query];
+					}
+					
+					
+					var items = parseUrl(window.location.href);
+					var base = items[0];
+					var path = items[1];
+					var query = items[2];
+					var xhr = createXhr();
+					url += ((url.indexOf("?")!=-1) ? "&amp;" : "?") +"_=" + createGuid();
+					if (mode === "3"){
+						url += "&amp;url=" + path;
+						if (query)
+							url += "&amp;" + query;
+					}
+					xhr.open('GET', base + url, async);
+					
+					if (async){
+						xhr.onreadystatechange=function(){
+							if((xhr.readyState == 4) &amp;&amp; (xhr.status == 200) &amp;&amp; xhr.responseText){
+								var versionInfo = JSON.parse(xhr.responseText);
+								window.__justep.versionInfo = versionInfo;
+								window.__justep.versionInfo.baseUrl = base;
+								if (query){
+									path = path + "?" + query;
+								}
+								path = versionInfo.resourceInfo.indexURL || path; /* 如果返回indexPath则使用indexPath，否则使用当前的path */
+								var indexUrl = versionInfo.baseUrl + versionInfo.resourceInfo.version + path;
+								versionInfo.resourceInfo.indexPageURL = indexUrl;
+								if(versionInfo.resourceInfo.resourceUpdateMode != "md5"){
+									if (window.__justep.url.indexOf(versionInfo.resourceInfo.version) == -1){
+										versionInfo.resourceInfo.isNewVersion = true;
+									};
+								}
+							}
+						}
+					}
+					
+					try{
+						xhr.send(null);
+						if (!async &amp;&amp; (xhr.status == 200) &amp;&amp; xhr.responseText){
+							var versionInfo = JSON.parse(xhr.responseText);
+							window.__justep.versionInfo = versionInfo;
+							window.__justep.versionInfo.baseUrl = base;
+							if ((mode==="3") &amp;&amp; window.__justep.isDebug){
+								/* 模式3且是调试模式不重定向 */
+							}else{
+								if (query){
+									path = path + "?" + query;
+								}
+								if(versionInfo.resourceInfo.resourceUpdateMode == "md5"){
+									path = versionInfo.resourceInfo.indexURL || path; /* 如果返回indexPath则使用indexPath，否则使用当前的path */
+									var indexUrl = versionInfo.baseUrl + versionInfo.resourceInfo.version + path;
+									versionInfo.resourceInfo.indexPageURL = indexUrl; 
+								}else if (versionInfo.resourceInfo &amp;&amp; versionInfo.resourceInfo.version &amp;&amp; (window.__justep.url.indexOf(versionInfo.resourceInfo.version) == -1)){
+									path = versionInfo.resourceInfo.indexURL || path; /* 如果返回indexPath则使用indexPath，否则使用当前的path */
+									var indexUrl = versionInfo.baseUrl + versionInfo.resourceInfo.version + path;
+									window.location.href = indexUrl;
+								}
+							}
+						}
+					}catch(e2){}
+				}("@versionUrl@", "@mode@"));
+                 
+        </script>  
+    <link rel="stylesheet" href="../../v_5569_nol_zh_CNs_desktopd_pc/system/components/bootstrap.min.css" include="$model/UI2/system/components/bootstrap/lib/css/bootstrap,$model/UI2/system/components/bootstrap/lib/css/bootstrap-theme"/>
+    <link rel="stylesheet" href="../../v_5569_nol_zh_CNs_desktopd_pc/system/components/comp.min.css" include="$model/UI2/system/components/justep/lib/css2/dataControl,$model/UI2/system/components/justep/input/css/datePickerPC,$model/UI2/system/components/justep/messageDialog/css/messageDialog,$model/UI2/system/components/justep/lib/css3/round,$model/UI2/system/components/justep/input/css/datePicker,$model/UI2/system/components/justep/row/css/row,$model/UI2/system/components/justep/attachment/css/attachment,$model/UI2/system/components/justep/barcode/css/barcodeImage,$model/UI2/system/components/bootstrap/dropdown/css/dropdown,$model/UI2/system/components/justep/dataTables/css/dataTables,$model/UI2/system/components/justep/contents/css/contents,$model/UI2/system/components/justep/common/css/forms,$model/UI2/system/components/justep/locker/css/locker,$model/UI2/system/components/justep/menu/css/menu,$model/UI2/system/components/justep/scrollView/css/scrollView,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/dialog/css/dialog,$model/UI2/system/components/justep/bar/css/bar,$model/UI2/system/components/justep/popMenu/css/popMenu,$model/UI2/system/components/justep/lib/css/icons,$model/UI2/system/components/justep/lib/css4/e-commerce,$model/UI2/system/components/justep/toolBar/css/toolBar,$model/UI2/system/components/justep/popOver/css/popOver,$model/UI2/system/components/justep/panel/css/panel,$model/UI2/system/components/bootstrap/carousel/css/carousel,$model/UI2/system/components/justep/wing/css/wing,$model/UI2/system/components/bootstrap/scrollSpy/css/scrollSpy,$model/UI2/system/components/justep/titleBar/css/titleBar,$model/UI2/system/components/justep/lib/css1/linear,$model/UI2/system/components/justep/numberSelect/css/numberList,$model/UI2/system/components/justep/list/css/list,$model/UI2/system/components/justep/dataTables/css/dataTables"/>
+  </head>  
+  <body xmlns="" style="width:100%;height:100%;margin: 0;"> 
+    <script intro="none"/>  
+    <div id="applicationHost" class="applicationHost" style="width:100%;height:100%;" __component-context__="block">
+      <div class="main13 cJnEZRr" component="$model/UI2/system/components/justep/window/window" design="device:m;" xid="window" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cJnEZRr" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/input/input,$model/UI2/system/components/bootstrap/row/row,$model/UI2/system/components/justep/panel/child,$model/UI2/system/components/justep/panel/panel,$model/UI2/system/components/justep/popOver/popOver,$model/UI2/system/components/justep/contents/content,$model/UI2/system/components/justep/windowContainer/windowContainer,$model/UI2/system/components/justep/row/row,$model/UI2/system/components/bootstrap/carousel/carousel,$model/UI2/system/components/justep/titleBar/titleBar,$model/UI2/system/components/justep/contents/contents,$model/UI2/system/components/justep/data/data,$model/UI2/system/components/justep/window/window,$model/UI2/system/components/justep/button/buttonGroup,">  
+        <style xmlns:xhtml="http://www.w3.org/1999/xhtml">h5.cJnEZRr, .h5.cJnEZRr{color: rgb(0, 0, 0); font-size: 16px} .text-danger.cJnEZRr{color: rgb(234, 65, 60)} .text-black.cJnEZRr{color: rgb(0, 0, 0)} .x-panel-top.cJnEZRr .x-titlebar.cJnEZRr{background-color: rgb(234, 65, 60)} .x-bar.cJnEZRr{background-color: rgb(225, 225, 225); border: none} .x-titlebar.cJnEZRr .x-titlebar-right.cJnEZRr .btn.cJnEZRr{padding-left: 30px} .img1.cJnEZRr{height: 200px} .img3.cJnEZRr{height: 60px} .img_new.cJnEZRr{width: 100px; height: 70px} .img_small.cJnEZRr{height: 15px} .img_cloud.cJnEZRr{height: 30px} .btn.cJnEZRr i.cJnEZRr{font-size: 20px} .o-nomargintop.cJnEZRr{margin-top: 0} .x-nav.x-row.cJnEZRr, .x-nav.cJnEZRr .x-col.cJnEZRr{padding: 0; background-color: rgb(250, 250, 250)} .x-nav.cJnEZRr .x-col.cJnEZRr:nth-child(1){height: 41px; overflow: hidden} .x-nav.cJnEZRr .x-col.cJnEZRr:nth-child(2){width: 50px} .x-nav.cJnEZRr .x-col.cJnEZRr .x-navbox.cJnEZRr{height: 61px; overflow-x: scroll; overflow-y: hidden} .x-nav.cJnEZRr .x-col.cJnEZRr .x-navbox.cJnEZRr .btn-group.cJnEZRr{width: 480px} .x-nav.cJnEZRr .btn-group.cJnEZRr .btn.cJnEZRr{height: 41px; border-top: 0; font-weight: normal; color: rgb(153, 153, 153)} .x-nav.cJnEZRr .btn-group.cJnEZRr .btn.active.cJnEZRr{height: 41px; border-bottom: 2px solid rgb(234, 65, 60); color: rgb(234, 65, 60)} .x-nav.cJnEZRr .navMoreBtn.cJnEZRr{background-color: rgb(225, 225, 225)} .x-popOver-overlay.cJnEZRr{background-color: rgb(0, 0, 0)} .x-popOver-content.cJnEZRr{border-radius: 0} .x-wangyiOver.cJnEZRr h5.cJnEZRr{padding-left: 15px} .x-wangyiOver.cJnEZRr .x-titlebar.cJnEZRr{height: 40px; background-color: rgb(241, 241, 241)} .x-wangyiOver.cJnEZRr .x-navGroup.cJnEZRr{padding-bottom: 0} .x-wangyiOver.cJnEZRr .x-navGroup.cJnEZRr .col-xs-3.cJnEZRr{padding-left: 3px; padding-right: 3px} .x-wangyiOver.cJnEZRr .x-navGroup.cJnEZRr .btn.cJnEZRr{border-color: rgb(204, 204, 204); border-radius: 3px; margin-bottom: 10px; color: rgb(102, 102, 102); display: block} .x-wangyiOver.cJnEZRr .x-navGroup.cJnEZRr .btn.active.cJnEZRr{border-color: red; background-color: rgb(234, 65, 60); color: rgb(255, 255, 255)} .x-seach.cJnEZRr{background-color: rgb(246, 246, 246); display: none} .x-seach.cJnEZRr span.cJnEZRr{margin: 10px 10px 0 0} .x-wangyi.btn-group.cJnEZRr{background-color: rgb(255, 255, 255)} .x-wangyi.btn-group.cJnEZRr .btn.cJnEZRr{border-top: 0} .x-wangyi.btn-group.cJnEZRr .btn.cJnEZRr span.cJnEZRr{font-size: 12px; font-weight: normal} .x-card.btn-group.cJnEZRr .btn.active.cJnEZRr{color: rgb(234, 65, 60); padding: 0; border-top: 0} .x-banner.cJnEZRr{overflow-x: hidden} .x-banner.cJnEZRr .carousel-indicators.cJnEZRr{bottom: 20px; margin-left: 10%} .x-banner.cJnEZRr .carousel-indicators.cJnEZRr .active.cJnEZRr{width: 8px; height: 8px} .x-banner.cJnEZRr .carousel-indicators.cJnEZRr li.cJnEZRr{width: 6px; height: 6px} .x-banner.cJnEZRr .x-contents.cJnEZRr .x-contents-content.cJnEZRr .x-title.cJnEZRr{background-color: rgb(255, 255, 255); padding: 5px} .x-wangyi.panel.cJnEZRr{margin-bottom: 10px} .x-wangyi.panel.cJnEZRr &gt; .panel-heading.cJnEZRr .panel-title.cJnEZRr{color: rgb(51, 51, 51)} .x-wangyi.cJnEZRr .list-group-item.cJnEZRr{border-radius: 0} .x-wangyi.cJnEZRr .list-group-item.cJnEZRr:last-child{border-bottom: 0} .o-nomargin.cJnEZRr{margin-left: 0; margin-right: 0} .o-nopadding.cJnEZRr{padding-left: 0; padding-right: 0}</style>  
+        <div component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" data-events="onLoad:modelLoad" __cid="cJnEZRr" class="cJnEZRr"/>  
+        <div component="$model/UI2/system/components/justep/popOver/popOver" class="x-popOver x-wangyiOver cJnEZRr" xid="popOver" style="height:100%;" data-bind="component:{name:'$model/UI2/system/components/justep/popOver/popOver'}" data-config="{&quot;anchor&quot;:&quot;navMenuTop&quot;,&quot;direction&quot;:&quot;right-bottom&quot;,&quot;opacity&quot;:0.5}" __cid="cJnEZRr"> 
+          <div class="x-popOver-overlay cJnEZRr" xid="div2" __cid="cJnEZRr"/>  
+          <div xid="div4" class="x-full x-popOver-content panel cJnEZRr" __cid="cJnEZRr"> 
+            <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-only-icon pull-right cJnEZRr" xid="button1" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'popOver.hide'}" data-config="{&quot;icon&quot;:&quot;icon-ios7-arrow-up&quot;}" __cid="cJnEZRr"> 
+              <i xid="i9" class="text-muted icon-ios7-arrow-up cJnEZRr" __cid="cJnEZRr"/> 
+            </a>  
+            <h5 class="text-muted cJnEZRr" __cid="cJnEZRr">切换栏目</h5>  
+            <div component="$model/UI2/system/components/bootstrap/row/row" class="row o-nomargin x-navGroup panel-body cJnEZRr" xid="row2" data-bind="component:{name:'$model/UI2/system/components/bootstrap/row/row'}" __cid="cJnEZRr"> 
+              <div class="col col-xs-3  cJnEZRr" xid="col4" __cid="cJnEZRr"> 
+                <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-only-label active cJnEZRr" xid="button3" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'popOver.hide'}" data-config="{&quot;label&quot;:&quot;头条&quot;,&quot;target&quot;:&quot;navContent1&quot;}" __cid="cJnEZRr"> 
+                  <i xid="i10" __cid="cJnEZRr" class="cJnEZRr"/>  
+                  <span xid="span18" __cid="cJnEZRr" class="cJnEZRr">头条</span> 
+                </a> 
+              </div>  
+              <div class="col col-xs-3 cJnEZRr" xid="col5" __cid="cJnEZRr"> 
+                <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-only-label cJnEZRr" xid="button4" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'popOver.hide'}" data-config="{&quot;label&quot;:&quot;娱乐&quot;,&quot;target&quot;:&quot;navContent2&quot;}" __cid="cJnEZRr"> 
+                  <i xid="i11" __cid="cJnEZRr" class="cJnEZRr"/>  
+                  <span xid="span19" __cid="cJnEZRr" class="cJnEZRr">娱乐</span> 
+                </a> 
+              </div>  
+              <div class="col col-xs-3 cJnEZRr" xid="col6" __cid="cJnEZRr"> 
+                <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-only-label cJnEZRr" xid="button6" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'popOver.hide'}" data-config="{&quot;label&quot;:&quot;热点&quot;,&quot;target&quot;:&quot;navContent3&quot;}" __cid="cJnEZRr"> 
+                  <i xid="i22" __cid="cJnEZRr" class="cJnEZRr"/>  
+                  <span xid="span26" __cid="cJnEZRr" class="cJnEZRr">热点</span> 
+                </a> 
+              </div>  
+              <div class="col col-xs-3 cJnEZRr" xid="col7" __cid="cJnEZRr"> 
+                <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-only-label cJnEZRr" xid="button7" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'popOver.hide'}" data-config="{&quot;label&quot;:&quot;体育&quot;,&quot;target&quot;:&quot;navContent4&quot;}" __cid="cJnEZRr"> 
+                  <i xid="i23" __cid="cJnEZRr" class="cJnEZRr"/>  
+                  <span xid="span27" __cid="cJnEZRr" class="cJnEZRr">体育</span> 
+                </a> 
+              </div>  
+              <div class="col col-xs-3 cJnEZRr" xid="col5" __cid="cJnEZRr"> 
+                <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-only-label cJnEZRr" xid="button4" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'popOver.hide'}" data-config="{&quot;label&quot;:&quot;昆明&quot;,&quot;target&quot;:&quot;navContent5&quot;}" __cid="cJnEZRr"> 
+                  <i xid="i11" __cid="cJnEZRr" class="cJnEZRr"/>  
+                  <span xid="span19" __cid="cJnEZRr" class="cJnEZRr">昆明</span> 
+                </a> 
+              </div>  
+              <div class="col col-xs-3 cJnEZRr" xid="col5" __cid="cJnEZRr"> 
+                <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-only-label cJnEZRr" xid="button4" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'popOver.hide'}" data-config="{&quot;label&quot;:&quot;财经&quot;,&quot;target&quot;:&quot;navContent6&quot;}" __cid="cJnEZRr"> 
+                  <i xid="i11" __cid="cJnEZRr" class="cJnEZRr"/>  
+                  <span xid="span19" __cid="cJnEZRr" class="cJnEZRr">财经</span> 
+                </a> 
+              </div>  
+              <div class="col col-xs-3 cJnEZRr" xid="col5" __cid="cJnEZRr"> 
+                <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-only-label cJnEZRr" xid="button4" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'popOver.hide'}" data-config="{&quot;label&quot;:&quot;科技&quot;,&quot;target&quot;:&quot;navContent7&quot;}" __cid="cJnEZRr"> 
+                  <i xid="i11" __cid="cJnEZRr" class="cJnEZRr"/>  
+                  <span xid="span19" __cid="cJnEZRr" class="cJnEZRr">科技</span> 
+                </a> 
+              </div>  
+              <div class="col col-xs-3 cJnEZRr" xid="col5" __cid="cJnEZRr"> 
+                <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-only-label cJnEZRr" xid="button4" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'popOver.hide'}" data-config="{&quot;label&quot;:&quot;图片&quot;,&quot;target&quot;:&quot;navContent8&quot;}" __cid="cJnEZRr"> 
+                  <i xid="i11" __cid="cJnEZRr" class="cJnEZRr"/>  
+                  <span xid="span19" __cid="cJnEZRr" class="cJnEZRr">图片</span> 
+                </a> 
+              </div> 
+            </div> 
+          </div> 
+        </div>  
+        <div component="$model/UI2/system/components/justep/popOver/popOver" class="x-popOver cJnEZRr" xid="popOverMore" style="height:100%;" data-bind="component:{name:'$model/UI2/system/components/justep/popOver/popOver'}" data-config="{&quot;anchor&quot;:&quot;titleBar&quot;,&quot;position&quot;:&quot;center&quot;}" __cid="cJnEZRr"> 
+          <div class="x-popOver-overlay cJnEZRr" xid="div13" __cid="cJnEZRr"/>  
+          <div class="x-full x-popOver-content panel cJnEZRr" xid="div14" __cid="cJnEZRr"> 
+            <div xid="div15" class="panel-body cJnEZRr" __cid="cJnEZRr"/>  
+            <div component="$model/UI2/system/components/bootstrap/row/row" class="row text-center panel-body o-nomargin o-nopadding cJnEZRr" xid="row4" data-bind="component:{name:'$model/UI2/system/components/bootstrap/row/row'}" __cid="cJnEZRr"> 
+              <div class="col col-xs-4 o-nopadding cJnEZRr" xid="col12" __cid="cJnEZRr"> 
+                <img src="" alt="" class="img3 cJnEZRr" xid="image5" __cid="cJnEZRr" data-bind="attr:{src:$model.getImageUrl('./main/img/more1.png')}"/>  
+                <div xid="div25" class="text-muted h6 cJnEZRr" __cid="cJnEZRr" data-bind="text:'搜索'"/> 
+              </div>  
+              <div class="col col-xs-4 o-nopadding cJnEZRr" xid="col14" __cid="cJnEZRr"> 
+                <img src="" alt="" class="img3 cJnEZRr" xid="image12" __cid="cJnEZRr" data-bind="attr:{src:$model.getImageUrl('./main/img/more2.png')}"/>  
+                <div xid="div24" class="text-muted h6 cJnEZRr" __cid="cJnEZRr" data-bind="text:'上头条'"/> 
+              </div>  
+              <div class="col col-xs-4 o-nopadding cJnEZRr" xid="col13" __cid="cJnEZRr"> 
+                <img src="" alt="" xid="image5" class="img3 cJnEZRr" __cid="cJnEZRr" data-bind="attr:{src:$model.getImageUrl('./main/img/more3.png')}"/>  
+                <div xid="div23" class="text-muted h6 cJnEZRr" __cid="cJnEZRr" data-bind="text:'离线'"/> 
+              </div>  
+              <div class="col col-xs-4 o-nopadding cJnEZRr" xid="col12" __cid="cJnEZRr"> 
+                <img src="" alt="" class="img3 cJnEZRr" xid="image5" __cid="cJnEZRr" data-bind="attr:{src:$model.getImageUrl('./main/img/more4.png')}"/>  
+                <div xid="div25" class="text-muted h6 cJnEZRr" __cid="cJnEZRr" data-bind="text:'夜间'"/> 
+              </div>  
+              <div class="col col-xs-4 o-nopadding cJnEZRr" xid="col12" __cid="cJnEZRr"> 
+                <img src="" alt="" class="img3 cJnEZRr" xid="image5" __cid="cJnEZRr" data-bind="attr:{src:$model.getImageUrl('./main/img/more5.png')}"/>  
+                <div xid="div25" class="text-muted h6 cJnEZRr" __cid="cJnEZRr" data-bind="text:'扫一扫'"/> 
+              </div>  
+              <div class="col col-xs-4 o-nopadding cJnEZRr" xid="col12" __cid="cJnEZRr"> 
+                <img src="" alt="" class="img3 cJnEZRr" xid="image5" __cid="cJnEZRr" data-bind="attr:{src:$model.getImageUrl('./main/img/more6.png')}"/>  
+                <div xid="div25" class="text-muted h6 cJnEZRr" __cid="cJnEZRr" data-bind="text:'邀请好友'"/> 
+              </div> 
+            </div> 
+          </div> 
+        </div>  
+        <div component="$model/UI2/system/components/justep/panel/panel" class="x-panel x-full x-card top-trans pcA3uqEz-iosstatusbar cJnEZRr" xid="panel1" data-bind="component:{name:'$model/UI2/system/components/justep/panel/panel'}" __cid="cJnEZRr"> 
+          <div class="x-panel-content x-cards cJnEZRr" xid="content" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cJnEZRr"> 
+            <div component="$model/UI2/system/components/justep/contents/contents" class="x-contents x-full cJnEZRr" xid="contents1" data-bind="component:{name:'$model/UI2/system/components/justep/contents/contents'}" data-config="{&quot;active&quot;:0,&quot;swipe&quot;:false,&quot;wrap&quot;:false}" __cid="cJnEZRr"> 
+              <div class="x-contents-content active cJnEZRr" xid="newsContent" component="$model/UI2/system/components/justep/contents/content" data-bind="component:{name:'$model/UI2/system/components/justep/contents/content'}" __cid="cJnEZRr"> 
+                <div component="$model/UI2/system/components/justep/panel/panel" class="x-panel x-full x-has-iosstatusbar pcI3mYBn-iosstatusbar cJnEZRr" xid="panel7" data-bind="component:{name:'$model/UI2/system/components/justep/panel/panel'}" __cid="cJnEZRr"> 
+                  <div class="x-panel-top cJnEZRr" xid="top1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" data-config="{&quot;height&quot;:48}" __cid="cJnEZRr"> 
+                    <div component="$model/UI2/system/components/justep/titleBar/titleBar" class="x-titlebar cJnEZRr" xid="titleBar" data-bind="component:{name:'$model/UI2/system/components/justep/titleBar/titleBar'}" __cid="cJnEZRr"> 
+                      <div class="x-titlebar-left flex1 cJnEZRr" xid="div1" __cid="cJnEZRr"> 
+                        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-lg btn-icon-left cJnEZRr" xid="button2" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:button2Click" data-config="{&quot;icon&quot;:&quot;linear linear-sad&quot;,&quot;label&quot;:&quot;Tao&quot;}" __cid="cJnEZRr"> 
+                          <i xid="i1" class="linear linear-sad cJnEZRr" __cid="cJnEZRr"/>  
+                          <span xid="span1" __cid="cJnEZRr" class="cJnEZRr">Tao</span> 
+                        </a> 
+                      </div>  
+                      <div class="x-titlebar-title cJnEZRr" __cid="cJnEZRr"/>  
+                      <div class="x-titlebar-right  cJnEZRr" xid="div3" reverse="true" __cid="cJnEZRr"> 
+                        <div class="empty cJnEZRr" __cid="cJnEZRr"/>  
+                        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-only-icon cJnEZRr" xid="moreBtn" style="background-color:transparent;" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'popOverMore.show'}" data-config="{&quot;icon&quot;:&quot;icon-android-more&quot;,&quot;label&quot;:&quot;button&quot;}" __cid="cJnEZRr"> 
+                          <i xid="i2" class="icon-android-more cJnEZRr" __cid="cJnEZRr"/>  
+                          <span xid="span3" __cid="cJnEZRr" class="cJnEZRr"/> 
+                        </a> 
+                      </div> 
+                    </div> 
+                  </div>  
+                  <div class="x-panel-content cJnEZRr" xid="content1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cJnEZRr"> 
+                    <div component="$model/UI2/system/components/justep/panel/panel" class="x-panel x-full pcY7z6zy-iosstatusbar cJnEZRr" xid="panel2" data-bind="component:{name:'$model/UI2/system/components/justep/panel/panel'}" __cid="cJnEZRr"> 
+                      <div class="x-panel-top cJnEZRr" xid="navMenuTop" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cJnEZRr"> 
+                        <div component="$model/UI2/system/components/justep/row/row" class="x-row x-row-bottom x-nav cJnEZRr" xid="row5" data-bind="component:{name:'$model/UI2/system/components/justep/row/row'}" __cid="cJnEZRr"> 
+                          <div class="x-col cJnEZRr" xid="col15" __cid="cJnEZRr"> 
+                            <div component="$model/UI2/system/components/justep/button/buttonGroup" class="btn-group btn-group-justified x-card cJnEZRr" xid="buttonGroup2" data-bind="component:{name:'$model/UI2/system/components/justep/button/buttonGroup'}" data-config="{&quot;tabbed&quot;:true}" __cid="cJnEZRr"> 
+                              <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-only-label active cJnEZRr" xid="button24" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;电子数码&quot;,&quot;target&quot;:&quot;navContent1&quot;}" __cid="cJnEZRr"> 
+                                <i xid="i33" __cid="cJnEZRr" class="cJnEZRr"/>  
+                                <span xid="span44" __cid="cJnEZRr" class="cJnEZRr">电子数码</span> 
+                              </a>  
+                              <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-only-label cJnEZRr" xid="button22" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;书籍&quot;,&quot;target&quot;:&quot;navContent2&quot;}" __cid="cJnEZRr"> 
+                                <i xid="i34" __cid="cJnEZRr" class="cJnEZRr"/>  
+                                <span xid="span43" __cid="cJnEZRr" class="cJnEZRr">书籍</span> 
+                              </a>  
+                              <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-only-label cJnEZRr" xid="button20" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;运动&quot;,&quot;target&quot;:&quot;navContent3&quot;}" __cid="cJnEZRr"> 
+                                <i xid="i32" __cid="cJnEZRr" class="cJnEZRr"/>  
+                                <span xid="span41" __cid="cJnEZRr" class="cJnEZRr">运动</span> 
+                              </a>  
+                              <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-only-label cJnEZRr" xid="button21" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;生活&quot;,&quot;target&quot;:&quot;navContent4&quot;}" __cid="cJnEZRr"> 
+                                <i xid="i30" __cid="cJnEZRr" class="cJnEZRr"/>  
+                                <span xid="span42" __cid="cJnEZRr" class="cJnEZRr">生活</span> 
+                              </a>  
+                              <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-only-label cJnEZRr" xid="button23" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;其他&quot;,&quot;target&quot;:&quot;navContent5&quot;}" __cid="cJnEZRr"> 
+                                <i xid="i31" __cid="cJnEZRr" class="cJnEZRr"/>  
+                                <span xid="span25" __cid="cJnEZRr" class="cJnEZRr">其他</span> 
+                              </a>  
+                              <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-only-label cJnEZRr" xid="button25" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;笔记本&quot;,&quot;target&quot;:&quot;navContent6&quot;}" __cid="cJnEZRr"> 
+                                <i xid="i21" __cid="cJnEZRr" class="cJnEZRr"/>  
+                                <span xid="span20" __cid="cJnEZRr" class="cJnEZRr">笔记本</span> 
+                              </a>  
+                              <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-only-label cJnEZRr" xid="button26" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;科技&quot;,&quot;target&quot;:&quot;navContent7&quot;}" __cid="cJnEZRr"> 
+                                <i xid="i28" __cid="cJnEZRr" class="cJnEZRr"/>  
+                                <span xid="span40" __cid="cJnEZRr" class="cJnEZRr">科技</span> 
+                              </a> 
+                            </div> 
+                          </div> 
+                        </div> 
+                      </div>  
+                      <div class="x-panel-content cJnEZRr" xid="content2" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cJnEZRr"> 
+                        <div component="$model/UI2/system/components/justep/contents/contents" class="x-contents x-full cJnEZRr" xid="navContents" data-bind="component:{name:'$model/UI2/system/components/justep/contents/contents'}" data-config="{&quot;active&quot;:0,&quot;wrap&quot;:false}" __cid="cJnEZRr"> 
+                          <div class="x-contents-content active cJnEZRr" xid="navContent1" component="$model/UI2/system/components/justep/contents/content" data-bind="component:{name:'$model/UI2/system/components/justep/contents/content'},event:{touchmove:$model._callModelFn.bind($model, 'navContent1Touchmove'),touchstart:$model._callModelFn.bind($model, 'navContent1Touchstart')}" __cid="cJnEZRr"> 
+                            <div class="list-group-item x-seach cJnEZRr" xid="div16" __cid="cJnEZRr"> 
+                              <input component="$model/UI2/system/components/justep/input/input" class="form-control x-inputText cJnEZRr" xid="keyInput" data-bind="component:{name:'$model/UI2/system/components/justep/input/input'}" __cid="cJnEZRr"/>  
+                              <span class="glyphicon glyphicon-search form-control-feedback cJnEZRr" aria-hidden="true" xid="span34" __cid="cJnEZRr"/> 
+                            </div>  
+                            <div component="$model/UI2/system/components/bootstrap/carousel/carousel" class="x-carousel carousel x-banner cJnEZRr" xid="carousel1" data-bind="component:{name:'$model/UI2/system/components/bootstrap/carousel/carousel'}" __cid="cJnEZRr"> 
+                              <ol class="carousel-indicators cJnEZRr" xid="ol1" __cid="cJnEZRr"/>  
+                              <div class="x-contents carousel-inner cJnEZRr" role="listbox" component="$model/UI2/system/components/justep/contents/contents" xid="bannerContents" data-bind="component:{name:'$model/UI2/system/components/justep/contents/contents'}" data-config="{&quot;active&quot;:0,&quot;slidable&quot;:true,&quot;swipe&quot;:true,&quot;wrap&quot;:true}" __cid="cJnEZRr"> 
+                                <div class="x-contents-content active cJnEZRr" xid="banner1" component="$model/UI2/system/components/justep/contents/content" data-bind="component:{name:'$model/UI2/system/components/justep/contents/content'}" __cid="cJnEZRr"> 
+                                  <img alt="" xid="image1" id="image1" class="image-wall img1 cJnEZRr" __cid="cJnEZRr" data-bind="attr:{src:$model.getImageUrl('./main/img/1.jpg')}"/>  
+                                  <div class="x-title cJnEZRr" xid="div17" __cid="cJnEZRr"> 
+                                    <img alt="" class="img_small cJnEZRr" xid="image4" __cid="cJnEZRr" data-bind="attr:{src:$model.getImageUrl('./main/img/icon1.png')}"/>  
+                                    <span xid="span35" __cid="cJnEZRr" class="cJnEZRr">图1</span> 
+                                  </div> 
+                                </div>  
+                                <div class="x-contents-content cJnEZRr" xid="banner2" component="$model/UI2/system/components/justep/contents/content" data-bind="component:{name:'$model/UI2/system/components/justep/contents/content'}" __cid="cJnEZRr"> 
+                                  <img alt="" xid="image2" id="image2" class="image-wall img1 cJnEZRr" __cid="cJnEZRr" data-bind="attr:{src:$model.getImageUrl('./main/img/2.jpg')}"/>  
+                                  <div class="x-title cJnEZRr" xid="div10" __cid="cJnEZRr"> 
+                                    <img alt="" class="img_small cJnEZRr" xid="image8" __cid="cJnEZRr" data-bind="attr:{src:$model.getImageUrl('./main/img/icon5.png')}"/>  
+                                    <span xid="span22" __cid="cJnEZRr" class="cJnEZRr">图2</span> 
+                                  </div> 
+                                </div>  
+                                <div class="x-contents-content cJnEZRr" xid="banner3" component="$model/UI2/system/components/justep/contents/content" data-bind="component:{name:'$model/UI2/system/components/justep/contents/content'}" __cid="cJnEZRr"> 
+                                  <img alt="" xid="image13" id="image13" class="image-wall img1 cJnEZRr" __cid="cJnEZRr" data-bind="attr:{src:$model.getImageUrl('./main/img/3.jpg')}"/>  
+                                  <div class="x-title cJnEZRr" xid="div11" __cid="cJnEZRr"> 
+                                    <img alt="" class="img_small cJnEZRr" xid="image9" __cid="cJnEZRr" data-bind="attr:{src:$model.getImageUrl('./main/img/icon1.png')}"/>  
+                                    <span xid="span23" __cid="cJnEZRr" class="cJnEZRr">图3</span> 
+                                  </div> 
+                                </div>  
+                                <div class="x-contents-content cJnEZRr" xid="banner4" component="$model/UI2/system/components/justep/contents/content" data-bind="component:{name:'$model/UI2/system/components/justep/contents/content'}" __cid="cJnEZRr"> 
+                                  <img alt="" xid="image14" id="image14" class="image-wall img1 cJnEZRr" __cid="cJnEZRr" data-bind="attr:{src:$model.getImageUrl('./main/img/4.jpg')}"/>  
+                                  <div class="x-title cJnEZRr" xid="div12" __cid="cJnEZRr"> 
+                                    <img alt="" class="img_small cJnEZRr" xid="image10" __cid="cJnEZRr" data-bind="attr:{src:$model.getImageUrl('./main/img/icon1.png')}"/>  
+                                    <span xid="span24" __cid="cJnEZRr" class="cJnEZRr">图4</span> 
+                                  </div> 
+                                </div> 
+                              </div> 
+                            </div> 
+                          </div>  
+                          <div class="x-contents-content cJnEZRr" xid="navContent2" component="$model/UI2/system/components/justep/contents/content" data-bind="component:{name:'$model/UI2/system/components/justep/contents/content'}" __cid="cJnEZRr"> 
+                            <div component="$model/UI2/system/components/justep/windowContainer/windowContainer" class="x-window-container cJnEZRr" xid="navContainer2" style="height:100%;width:100%;" __component-context__="block" data-bind="component:{name:'$model/UI2/system/components/justep/windowContainer/windowContainer'}" data-config="{&quot;autoLoad&quot;:true}" __cid="cJnEZRr"/> 
+                          </div>  
+                          <div class="x-contents-content cJnEZRr" xid="navContent3" component="$model/UI2/system/components/justep/contents/content" data-bind="component:{name:'$model/UI2/system/components/justep/contents/content'}" __cid="cJnEZRr"> 
+                            <div component="$model/UI2/system/components/justep/windowContainer/windowContainer" class="x-window-container cJnEZRr" xid="navContainer3" style="height:100%;width:100%;" __component-context__="block" data-bind="component:{name:'$model/UI2/system/components/justep/windowContainer/windowContainer'}" data-config="{&quot;autoLoad&quot;:true}" __cid="cJnEZRr"/> 
+                          </div>  
+                          <div class="x-contents-content cJnEZRr" xid="navContent4" component="$model/UI2/system/components/justep/contents/content" data-bind="component:{name:'$model/UI2/system/components/justep/contents/content'}" __cid="cJnEZRr"> 
+                            <div component="$model/UI2/system/components/justep/windowContainer/windowContainer" class="x-window-container cJnEZRr" xid="navContainer4" style="height:100%;width:100%;" __component-context__="block" data-bind="component:{name:'$model/UI2/system/components/justep/windowContainer/windowContainer'}" data-config="{&quot;autoLoad&quot;:true}" __cid="cJnEZRr"/> 
+                          </div>  
+                          <div class="x-contents-content cJnEZRr" xid="navContent5" component="$model/UI2/system/components/justep/contents/content" data-bind="component:{name:'$model/UI2/system/components/justep/contents/content'}" __cid="cJnEZRr"> 
+                            <div component="$model/UI2/system/components/justep/windowContainer/windowContainer" class="x-window-container cJnEZRr" xid="navContainer5" style="height:100%;width:100%;" __component-context__="block" data-bind="component:{name:'$model/UI2/system/components/justep/windowContainer/windowContainer'}" data-config="{&quot;autoLoad&quot;:true}" __cid="cJnEZRr"/> 
+                          </div>  
+                          <div class="x-contents-content cJnEZRr" xid="navContent6" component="$model/UI2/system/components/justep/contents/content" data-bind="component:{name:'$model/UI2/system/components/justep/contents/content'}" __cid="cJnEZRr"> 
+                            <div component="$model/UI2/system/components/justep/windowContainer/windowContainer" class="x-window-container cJnEZRr" xid="navContainer6" style="height:100%;width:100%;" __component-context__="block" data-bind="component:{name:'$model/UI2/system/components/justep/windowContainer/windowContainer'}" data-config="{&quot;autoLoad&quot;:true}" __cid="cJnEZRr"/> 
+                          </div>  
+                          <div class="x-contents-content cJnEZRr" xid="navContent7" component="$model/UI2/system/components/justep/contents/content" data-bind="component:{name:'$model/UI2/system/components/justep/contents/content'}" __cid="cJnEZRr"> 
+                            <div component="$model/UI2/system/components/justep/windowContainer/windowContainer" class="x-window-container cJnEZRr" xid="navContainer7" style="height:100%;width:100%;" __component-context__="block" data-bind="component:{name:'$model/UI2/system/components/justep/windowContainer/windowContainer'}" data-config="{&quot;autoLoad&quot;:true}" __cid="cJnEZRr"/> 
+                          </div> 
+                        </div> 
+                      </div>  
+                      <style __cid="cJnEZRr" class="cJnEZRr">.x-panel.pcY7z6zy-iosstatusbar &gt;.x-panel-top {height: 48px;}.x-panel.pcY7z6zy-iosstatusbar &gt;.x-panel-content { top: 48px;bottom: nullpx;}.x-panel.pcY7z6zy-iosstatusbar &gt;.x-panel-bottom {height: nullpx;}.iosstatusbar .x-panel.pcY7z6zy-iosstatusbar &gt;.x-panel-top,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pcY7z6zy-iosstatusbar &gt;.x-panel-top {height: 68px;}.iosstatusbar .x-panel.pcY7z6zy-iosstatusbar &gt;.x-panel-content,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pcY7z6zy-iosstatusbar &gt;.x-panel-content { top: 68px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pcY7z6zy-iosstatusbar &gt;.x-panel-top {height: 48px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pcY7z6zy-iosstatusbar &gt;.x-panel-content {top: 48px;}</style> 
+                    </div> 
+                  </div>  
+                  <style __cid="cJnEZRr" class="cJnEZRr">.x-panel.pcI3mYBn-iosstatusbar &gt;.x-panel-top {height: 48px;}.x-panel.pcI3mYBn-iosstatusbar &gt;.x-panel-content { top: 48px;bottom: nullpx;}.x-panel.pcI3mYBn-iosstatusbar &gt;.x-panel-bottom {height: nullpx;}.iosstatusbar .x-panel.pcI3mYBn-iosstatusbar &gt;.x-panel-top,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pcI3mYBn-iosstatusbar &gt;.x-panel-top {height: 68px;}.iosstatusbar .x-panel.pcI3mYBn-iosstatusbar &gt;.x-panel-content,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pcI3mYBn-iosstatusbar &gt;.x-panel-content { top: 68px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pcI3mYBn-iosstatusbar &gt;.x-panel-top {height: 48px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pcI3mYBn-iosstatusbar &gt;.x-panel-content {top: 48px;}</style> 
+                </div> 
+              </div> 
+            </div> 
+          </div>  
+          <style __cid="cJnEZRr" class="cJnEZRr">.x-panel.pcA3uqEz-iosstatusbar &gt;.x-panel-top {height: 0px;}.x-panel.pcA3uqEz-iosstatusbar &gt;.x-panel-content { top: 0px;bottom: nullpx;}.x-panel.pcA3uqEz-iosstatusbar &gt;.x-panel-bottom {height: nullpx;}.iosstatusbar .x-panel.pcA3uqEz-iosstatusbar &gt;.x-panel-top,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pcA3uqEz-iosstatusbar &gt;.x-panel-top {height: 0px;}.iosstatusbar .x-panel.pcA3uqEz-iosstatusbar &gt;.x-panel-content,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pcA3uqEz-iosstatusbar &gt;.x-panel-content { top: 0px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pcA3uqEz-iosstatusbar &gt;.x-panel-top {height: 0px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pcA3uqEz-iosstatusbar &gt;.x-panel-content {top: 0px;}</style> 
+        </div> 
+      </div>
+    </div>  
+    <div id="downloadGCF" style="display:none;padding:50px;"> 
+      <span>您使用的浏览器需要下载插件才能使用,</span>  
+      <a id="downloadGCFLink" href="#">下载地址</a>  
+      <p>(安装后请重新打开浏览器)</p> 
+    </div>  
+    <script>
+    	
+    	            //判断浏览器, 判断GCF
+    	 			var browser = {
+    			        isIe: function () {
+    			            return navigator.appVersion.indexOf("MSIE") != -1;
+    			        },
+    			        navigator: navigator.appVersion,
+    			        getVersion: function() {
+    			            var version = 999; // we assume a sane browser
+    			            if (navigator.appVersion.indexOf("MSIE") != -1)
+    			                // bah, IE again, lets downgrade version number
+    			                version = parseFloat(navigator.appVersion.split("MSIE")[1]);
+    			            return version;
+    			        }
+    			    };
+    				function isGCFInstalled(){
+    			      try{
+    			        var i = new ActiveXObject('ChromeTab.ChromeFrame');
+    			        if (i) {
+    			          return true;
+    			        }
+    			      }catch(e){}
+    			      return false;
+    				}
+    	            //判断浏览器, 判断GCF
+    	            var __continueRun = true;
+    				if (browser.isIe() &amp;&amp; (browser.getVersion() &lt; 10) &amp;&amp; !isGCFInstalled()) {
+    					document.getElementById("applicationHost").style.display = 'none';
+    					document.getElementById("downloadGCF").style.display = 'block';
+    					var downloadLink = "/" + location.pathname.match(/[^\/]+/)[0] + "/v8.msi";
+    					document.getElementById("downloadGCFLink").href = downloadLink; 
+    					__continueRun = false;
+    	            }
+		 	
+    	</script>  
+    <script id="_metaJS" src="../../v_5569_nol_zh_CNs_desktopd_pc/system/config/meta.js"> </script>  
+    <script id="_requireJS" src="../../v_5569_nol_zh_CNs_desktopd_pc/system/lib/require/require.2.1.10.js"> </script>  
+    <script xmlns:xhtml="http://www.w3.org/1999/xhtml" src="../../v_5569_nol_zh_CNs_desktopd_pc/system/core.min.js"></script>
+    <script xmlns:xhtml="http://www.w3.org/1999/xhtml" src="../../v_5569_nol_zh_CNs_desktopd_pc/system/common.min.js"></script>
+    <script xmlns:xhtml="http://www.w3.org/1999/xhtml" src="../../v_5569_nol_zh_CNs_desktopd_pc/system/components/comp.min.js"></script>
+    <script xmlns:xhtml="http://www.w3.org/1999/xhtml" src="../../v_5569_nol_zh_CNs_desktopd_pc/system/components/comp2.min.js"></script>
+    <script id="_mainScript">
+        
+			if (__continueRun) {
+                window.__justep.cssReady = function(fn){
+                	var promises = [];
+                	for (var p in window.__justep.__ResourceEngine.__loadingCss){
+                		if(window.__justep.__ResourceEngine.__loadingCss.hasOwnProperty(p))
+                			promises.push(window.__justep.__ResourceEngine.__loadingCss[p].promise());
+                	}
+                	$.when.apply($, promises).done(fn);
+                };
+                
+            	window.__justep.__ResourceEngine = {
+            		readyRegExp : navigator.platform === 'PLAYSTATION 3' ? /^complete$/ : /^(complete|loaded)$/,
+            		url: window.location.href,	
+            		/*contextPath: 不包括语言 */
+            		contextPath: "",
+            		serverPath: "",
+            		__loadedJS: [],
+            		__loadingCss: {},
+            		onLoadCss: function(url, node){
+            			if (!this.__loadingCss[url]){
+            				this.__loadingCss[url] = $.Deferred();	
+                			if (node.attachEvent &amp;&amp;
+                                    !(node.attachEvent.toString &amp;&amp; node.attachEvent.toString().indexOf('[native code') &lt; 0) &amp;&amp;
+                                    !(typeof opera !== 'undefined' &amp;&amp; opera.toString() === '[object Opera]')) {
+                                node.attachEvent('onreadystatechange', this.onLinkLoad.bind(this));
+                            } else {
+                                node.addEventListener('load', this.onLinkLoad.bind(this), false);
+                                node.addEventListener('error', this.onLinkError.bind(this), false);
+                            }
+            			}
+            		},
+            		
+            		onLinkLoad: function(evt){
+            	        var target = (evt.currentTarget || evt.srcElement);
+            	        if (evt.type === 'load' ||
+                                (this.readyRegExp.test(target.readyState))) {
+            	        	var url = target.getAttribute("href");
+            	        	if (url &amp;&amp; window.__justep.__ResourceEngine.__loadingCss[url]){
+            	        		window.__justep.__ResourceEngine.__loadingCss[url].resolve(url);
+            	        	}
+                        }
+            		},
+            		
+            		onLinkError: function(evt){
+            	        var target = (evt.currentTarget || evt.srcElement);
+        	        	var url = target.getAttribute("href");
+        	        	if (url &amp;&amp; window.__justep.__ResourceEngine.__loadingCss[url]){
+        	        		window.__justep.__ResourceEngine.__loadingCss[url].resolve(url);
+        	        	}
+            		},
+            		
+            		initContextPath: function(){
+            			var baseURL = document.getElementById("_requireJS").src;
+            			var before = location.protocol + "//" + location.host;
+            			var after = "/system/lib/require/require.2.1.10";
+            			var i = baseURL.indexOf(after);
+            			if (i !== -1){
+    	        			var middle = baseURL.substring(before.length, i);
+    						var items = middle.split("/");
+    						
+    						
+    						if ((items[items.length-1].indexOf("v_") === 0) 
+    								&amp;&amp; (items[items.length-1].indexOf("l_") !== -1)
+    								&amp;&amp; (items[items.length-1].indexOf("s_") !== -1)
+    								&amp;&amp; (items[items.length-1].indexOf("d_") !== -1)
+    								|| (items[items.length-1]=="v_")){
+    							items.splice(items.length-1, 1);
+    						}
+    						
+    						
+    						if (items.length !== 1){
+    							window.__justep.__ResourceEngine.contextPath = items.join("/");
+    						}else{
+    							window.__justep.__ResourceEngine.contextPath = before;
+    						}
+    						var index = window.__justep.__ResourceEngine.contextPath.lastIndexOf("/");
+    						if (index != -1){
+    							window.__justep.__ResourceEngine.serverPath = window.__justep.__ResourceEngine.contextPath.substr(0, index);
+    						}else{
+    							window.__justep.__ResourceEngine.serverPath = window.__justep.__ResourceEngine.contextPath;
+    						}
+            			}else{
+            				throw new Error(baseURL + " hasn't  " + after);
+            			}
+            		},
+            	
+            		loadJs: function(urls){
+            			if (urls &amp;&amp; urls.length&gt;0){
+            				var loadeds = this._getResources("script", "src").concat(this.__loadedJS);
+    	       				for (var i=0; i&lt;urls.length; i++){
+								var url = urls[i];
+    	        				if(!this._isLoaded(url, loadeds)){
+    	        					this.__loadedJS[this.__loadedJS.length] = url;
+    	        					/*
+    	        					var script = document.createElement("script");
+    	        					script.src = url;
+    	        					document.head.appendChild(script);
+    	        					*/
+    	        					//$("head").append("&lt;script  src='" + url + "'/&gt;");
+									var url = require.toUrl("$UI" + url);
+    	        					$.ajax({
+    	        						url: url,
+    	        						dataType: "script",
+    	        						cache: true,
+    	        						async: false,
+    	        						success: function(){}
+    	        						});
+    	        				} 
+    	       				}
+            			}
+            		},
+            		
+            		loadCss: function(styles){
+           				var loadeds = this._getResources("link", "href");
+            			if (styles &amp;&amp; styles.length&gt;0){
+            				for (var i=0; i&lt;styles.length; i++){
+    	       					var url = window.__justep.__ResourceEngine.contextPath + styles[i].url
+    	        				if(!this._isLoaded(url, loadeds)){
+    	        					var include = styles[i].include || "";
+    	        					var link = $("&lt;link type='text/css' rel='stylesheet' href='" + url + "' include='" + include + "'/&gt;");
+    	        					this.onLoadCss(url, link[0]);
+    	        					$("head").append(link);
+    	        				} 
+            				}
+            			}
+            			
+            		},
+            		
+            		
+            		_isLoaded: function(url, loadeds){
+            			if (url){
+            				var newUrl = "";
+            				var items = url.split("/");
+            				var isVls = false;
+            				for (var i=0; i&lt;items.length; i++){
+            					if (isVls){
+                					newUrl += "/" + items[i];
+            					}else{
+                					if (items[i] &amp;&amp; (items[i].indexOf("v_")===0)
+            								&amp;&amp; (items[i].indexOf("l_")!==-1)
+            								&amp;&amp; (items[i].indexOf("s_")!==-1)
+            								&amp;&amp; (items[i].indexOf("d_")!==-1)
+            								|| (items[i]=="v_")){
+                						isVls = true;
+                					}
+            					}
+            				}
+            				if (!newUrl)
+            					newUrl = url;
+            				
+            				for (var i=0; i&lt;loadeds.length; i++){
+								var originUrl = this._getOriginUrl(loadeds[i]);
+								if (originUrl &amp;&amp; (originUrl.indexOf(newUrl)!==-1)){
+									return true;
+								}
+    						}
+            			}
+    					return false;
+            		},
+
+					_getOriginUrl: function(url){
+						var result = "";
+						if (url &amp;&amp; (url.indexOf(".md5_")!==-1)){
+							url = url.split("#")[0];
+							url = url.split("?")[0];
+							var items = url.split(".");
+							for (var i=0; i&lt;items.length; i++){
+								if ((i===items.length-2) &amp;&amp; (items[i].indexOf("md5_")!==-1)){
+									continue;
+								}else{
+									if (i&gt;0) result += ".";
+									result += items[i];
+								}
+							}
+						}else{
+							result = url;
+						}
+						return result;
+					},
+            		
+            		_getResources: function(tag, attr){
+    					var result = [];
+    					var scripts = $(tag);
+    					for (var i=0; i&lt;scripts.length; i++){
+    						var v = scripts[i][attr];
+    						if (v){
+    							result[result.length] = v;
+    						}
+    					}
+    					return result;
+            		}
+            	};
+            	
+            	window.__justep.__ResourceEngine.initContextPath();
+    			requirejs.config({
+    				baseUrl: window.__justep.__ResourceEngine.contextPath + '/v_5569_nol_zh_CNs_desktopd_pc/guangshangtao',
+    			    paths: {
+    			    	/* 解决require.normalizeName与require.toUrl嵌套后不一致的bug   */
+    			    	'$model/UI2/v_': window.__justep.__ResourceEngine.contextPath + '/v_5569_nol_zh_CNs_desktopd_pc',
+    			    	'$model/UI2': window.__justep.__ResourceEngine.contextPath + '/v_5569_nol_zh_CNs_desktopd_pc',
+    			    	'$model': window.__justep.__ResourceEngine.serverPath,
+    			        'text': window.__justep.__ResourceEngine.contextPath + '/v_5569_nol_zh_CNs_desktopd_pc/system/lib/require/text.2.0.10',
+    			        'bind': window.__justep.__ResourceEngine.contextPath + '/v_5569_nol_zh_CNs_desktopd_pc/system/lib/bind/bind',
+    			        'jquery': window.__justep.__ResourceEngine.contextPath + '/v_5569_nol_zh_CNs_desktopd_pc/system/lib/jquery/jquery-1.11.1.min'
+    			    },
+    			    map: {
+    				        '*': {
+    				            res: '$model/UI2/system/lib/require/res',
+    				            cordova: '$model/UI2/system/lib/require/cordova',
+    				            w: '$model/UI2/system/lib/require/w',
+    				            css: '$model/UI2/system/lib/require/css'
+    				        }
+    				},
+    				waitSeconds: 300
+    			});
+    			
+    			requirejs(['require', 'jquery', '$model/UI2/system/lib/base/composition', '$model/UI2/system/lib/base/url', '$model/UI2/system/lib/route/hashbangParser', '$model/UI2/system/components/justep/versionChecker/versionChecker', '$model/UI2/system/components/justep/loadingBar/loadingBar', '$model/UI2/system/lib/jquery/domEvent',  '$model/UI2/system/lib/cordova/cordova'],  function (require, $, composition, URL, HashbangParser,versionChecker) { 
+    				document.addEventListener('deviceready', function() {
+    	                if (navigator &amp;&amp; navigator.splashscreen &amp;&amp; navigator.splashscreen.hide) {
+    	                	/*延迟隐藏，视觉效果更理想*/
+    	                	setTimeout(function() {navigator.splashscreen.hide();}, 800);
+    	                }
+    	            }, false);
+					setTimeout(function(){
+						versionChecker.check();
+					},2000);
+    				var context = {};
+    				context.model = '$model/UI2/guangshangtao/main.w' + (document.location.search || "");
+    				context.view = $('#applicationHost').children()[0];
+    				var element = document.getElementById('applicationHost');
+
+					    				
+    				
+    				var ownerid = new URL(window.__justep.__ResourceEngine.url).getParam("$ownerid");
+    				var pwindow = opener;
+    				if (!pwindow &amp;&amp; window.parent &amp;&amp; window.parent.window){
+    					pwindow = window.parent.window;
+    				}
+    				if(ownerid &amp;&amp; pwindow 
+    						&amp;&amp; pwindow.__justep &amp;&amp; pwindow.__justep.windowOpeners
+    						&amp;&amp; pwindow.__justep.windowOpeners[ownerid]
+    						&amp;&amp; $.isFunction(pwindow.__justep.windowOpeners[ownerid].sendToWindow)){
+    					window.__justep.setParams = function(params){
+    						/* 给windowOpener提供再次传参数的接口  */
+    						params = params || {};
+    						composition.setParams(document.getElementById('applicationHost'), params);
+    					};
+    					var winOpener = pwindow.__justep.windowOpeners[ownerid];
+    					if(winOpener) winOpener.window = window;
+    					$(window).unload(function(event){
+    						if(winOpener &amp;&amp; winOpener.dispatchCloseEvent) winOpener.dispatchCloseEvent();
+    					});
+    					var params = winOpener.sendToWindow();
+						context.owner = winOpener;
+						context.params = params || {};
+	        			composition.compose(element, context);
+    				}else{
+        				var params =  {};
+    					var state = new HashbangParser(window.location.hash).parse().__state;
+    					if (state){
+    						params = state.get("");
+    						try{
+    							params = JSON.parse(params);
+    							if (params.hasOwnProperty("__singleValue__")){
+    								params = params.__singleValue__;
+    							}
+    						}catch(e1){}
+    					}
+    					context.noUpdateState = true;
+        				context.params = params;
+        				composition.compose(element, context);
+    				}
+    			});    
+            }
+		 	
+        </script> 
+  </body> 
+</html>

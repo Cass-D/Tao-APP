@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/window/window" design="device:m;" xid="window" class="window cyAjIze" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cyAjIze" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/scrollView/scrollView,$model/UI2/system/components/justep/list/list,$model/UI2/system/components/justep/panel/child,$model/UI2/system/components/justep/panel/panel,$model/UI2/system/components/justep/contents/content,$model/UI2/system/components/justep/output/output,$model/UI2/system/components/justep/titleBar/titleBar,$model/UI2/system/components/justep/contents/contents,$model/UI2/system/components/justep/window/window,$model/UI2/system/components/justep/data/baasData,$model/UI2/system/components/justep/button/buttonGroup,">  
+  <style xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml">null</style>  
+  <div xmlns="" component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" __cid="cyAjIze" class="cyAjIze"/>  
+  <div xmlns="" component="$model/UI2/system/components/justep/panel/panel" class="x-panel x-full pcuqURFb-iosstatusbar cyAjIze" xid="panel1" data-bind="component:{name:'$model/UI2/system/components/justep/panel/panel'}" __cid="cyAjIze"> 
+    <div class="x-panel-top cyAjIze" xid="top1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cyAjIze"> 
+      <div component="$model/UI2/system/components/justep/titleBar/titleBar" class="x-titlebar cyAjIze" xid="titleBar1" data-bind="component:{name:'$model/UI2/system/components/justep/titleBar/titleBar'}" data-config="{&quot;title&quot;:&quot;Tao&quot;}" __cid="cyAjIze"> 
+        <div class="x-titlebar-left cyAjIze" xid="left1" __cid="cyAjIze"/>  
+        <div class="x-titlebar-title cyAjIze" xid="title1" __cid="cyAjIze">Tao</div>  
+        <div class="x-titlebar-right  cyAjIze" xid="right1" __cid="cyAjIze"> 
+          <div class="empty cyAjIze" __cid="cyAjIze"/> 
+        </div> 
+      </div> 
+    </div>  
+    <div class="x-panel-content cyAjIze" xid="content1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cyAjIze"> 
+      <div component="$model/UI2/system/components/justep/contents/contents" class="x-contents x-full cyAjIze" xid="contents2" data-bind="component:{name:'$model/UI2/system/components/justep/contents/contents'}" data-config="{&quot;active&quot;:0}" __cid="cyAjIze"> 
+        <div class="x-contents-content  x-scroll-view active cyAjIze" xid="列表" component="$model/UI2/system/components/justep/contents/content" data-bind="component:{name:'$model/UI2/system/components/justep/contents/content'}" __cid="cyAjIze"> 
+          <div class="x-scroll cyAjIze" component="$model/UI2/system/components/justep/scrollView/scrollView" xid="scrollView1" data-bind="component:{name:'$model/UI2/system/components/justep/scrollView/scrollView'}" __cid="cyAjIze"> 
+            <div class="x-content-center x-pull-down container cyAjIze" xid="div1" __cid="cyAjIze"> 
+              <i class="x-pull-down-img glyphicon x-icon-pull-down cyAjIze" xid="i5" __cid="cyAjIze"/>  
+              <span class="x-pull-down-label cyAjIze" xid="span5" __cid="cyAjIze">下拉刷新...</span> 
+            </div>  
+            <div class="x-scroll-content cyAjIze" xid="div2" __cid="cyAjIze"> 
+              <div component="$model/UI2/system/components/justep/list/list" class="x-list cyAjIze" xid="list1" data-bind="component:{name:'$model/UI2/system/components/justep/list/list'}" data-config="{&quot;data&quot;:&quot;shipinfo&quot;}" __cid="cyAjIze"> 
+                <ul class="x-list-template hide cyAjIze" xid="listTemplateUl1" __cid="cyAjIze" data-bind="foreach:{data:$model.foreach_list1($element),afterRender:$model.foreach_afterRender_list1.bind($model,$element)}"> 
+                  <li xid="li1" class="x-min-height list-group-item cyAjIze" __cid="cyAjIze"> 
+                    <div xid="div4" class="media cyAjIze" __cid="cyAjIze"> 
+                      <div xid="div5" class="media-left cyAjIze" __cid="cyAjIze"> 
+                        <img src="" alt="" xid="image1" align="bottom" class="img-rounded cyAjIze" __cid="cyAjIze" data-bind="attr:{src:$model.getImgUrl($object.val(&quot;image&quot;))}"/> 
+                      </div>  
+                      <div xid="div6" class="media-body cyAjIze" __cid="cyAjIze"> 
+                        <div component="$model/UI2/system/components/justep/output/output" class="x-output cyAjIze" xid="output1" data-bind="component:{ref:ref(&quot;shopname&quot;),name:'$model/UI2/system/components/justep/output/output'}" __cid="cyAjIze"/>  
+                        <div component="$model/UI2/system/components/justep/output/output" class="x-output cyAjIze" xid="output2" data-bind="component:{ref:ref(&quot;des&quot;),name:'$model/UI2/system/components/justep/output/output'}" __cid="cyAjIze"/>  
+                        <div component="$model/UI2/system/components/justep/output/output" class="x-output cyAjIze" xid="output3" data-bind="component:{ref:ref(&quot;price&quot;),name:'$model/UI2/system/components/justep/output/output'}" __cid="cyAjIze"/>  
+                        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-sm pull-right cyAjIze" xid="button1" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;详情&quot;}" __cid="cyAjIze"> 
+                          <i xid="i6" __cid="cyAjIze" class="cyAjIze"/>  
+                          <span xid="span7" __cid="cyAjIze" class="cyAjIze">详情</span> 
+                        </a> 
+                      </div> 
+                    </div> 
+                  </li> 
+                </ul> 
+              </div> 
+            </div>  
+            <div class="x-content-center x-pull-up cyAjIze" xid="div3" __cid="cyAjIze"> 
+              <span class="x-pull-up-label cyAjIze" xid="span6" __cid="cyAjIze">加载更多...</span> 
+            </div> 
+          </div> 
+        </div>  
+        <div class="x-contents-content cyAjIze" xid="content3" component="$model/UI2/system/components/justep/contents/content" data-bind="component:{name:'$model/UI2/system/components/justep/contents/content'}" __cid="cyAjIze"/>  
+        <div class="x-contents-content cyAjIze" xid="购物车" component="$model/UI2/system/components/justep/contents/content" data-bind="component:{name:'$model/UI2/system/components/justep/contents/content'}" __cid="cyAjIze"/>  
+        <div class="x-contents-content cyAjIze" xid="设置" component="$model/UI2/system/components/justep/contents/content" data-bind="component:{name:'$model/UI2/system/components/justep/contents/content'}" __cid="cyAjIze"/> 
+      </div> 
+    </div>  
+    <div class="x-panel-bottom cyAjIze" xid="bottom1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cyAjIze"> 
+      <div component="$model/UI2/system/components/justep/button/buttonGroup" class="btn-group x-card btn-group-justified cyAjIze" xid="buttonGroup1" data-bind="component:{name:'$model/UI2/system/components/justep/button/buttonGroup'}" data-config="{&quot;selected&quot;:&quot;Home&quot;,&quot;tabbed&quot;:true}" __cid="cyAjIze"> 
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default btn-icon-top cyAjIze" xid="Home" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;icon&quot;:&quot;icon-android-note&quot;,&quot;label&quot;:&quot;动态&quot;,&quot;target&quot;:&quot;列表&quot;}" __cid="cyAjIze"> 
+          <i xid="i1" class="icon-android-note cyAjIze" __cid="cyAjIze"/>  
+          <span xid="span1" __cid="cyAjIze" class="cyAjIze">动态</span> 
+        </a>  
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default btn-icon-top cyAjIze" xid="button2" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;icon&quot;:&quot;glyphicon glyphicon-search&quot;,&quot;label&quot;:&quot;搜索&quot;,&quot;target&quot;:&quot;content3&quot;}" __cid="cyAjIze"> 
+          <i xid="i2" class="glyphicon glyphicon-search cyAjIze" __cid="cyAjIze"/>  
+          <span xid="span2" __cid="cyAjIze" class="cyAjIze">搜索</span> 
+        </a>  
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default btn-icon-top cyAjIze" xid="ShoppingCar" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;icon&quot;:&quot;linear linear-clock&quot;,&quot;label&quot;:&quot;购物车&quot;,&quot;target&quot;:&quot;购物车&quot;}" __cid="cyAjIze"> 
+          <i xid="i3" class="linear linear-clock cyAjIze" __cid="cyAjIze"/>  
+          <span xid="span3" __cid="cyAjIze" class="cyAjIze">购物车</span> 
+        </a>  
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default btn-icon-top cyAjIze" xid="Setting" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;icon&quot;:&quot;dataControl dataControl-user&quot;,&quot;label&quot;:&quot;设置&quot;,&quot;target&quot;:&quot;设置&quot;}" __cid="cyAjIze"> 
+          <i xid="i4" class="dataControl dataControl-user cyAjIze" __cid="cyAjIze"/>  
+          <span xid="span4" __cid="cyAjIze" class="cyAjIze">设置</span> 
+        </a> 
+      </div> 
+    </div>  
+    <style __cid="cyAjIze" class="cyAjIze">.x-panel.pcuqURFb-iosstatusbar &gt;.x-panel-top {height: 48px;}.x-panel.pcuqURFb-iosstatusbar &gt;.x-panel-content { top: 48px;bottom: nullpx;}.x-panel.pcuqURFb-iosstatusbar &gt;.x-panel-bottom {height: nullpx;}.iosstatusbar .x-panel.pcuqURFb-iosstatusbar &gt;.x-panel-top,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pcuqURFb-iosstatusbar &gt;.x-panel-top {height: 68px;}.iosstatusbar .x-panel.pcuqURFb-iosstatusbar &gt;.x-panel-content,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pcuqURFb-iosstatusbar &gt;.x-panel-content { top: 68px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pcuqURFb-iosstatusbar &gt;.x-panel-top {height: 48px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pcuqURFb-iosstatusbar &gt;.x-panel-content {top: 48px;}</style> 
+  </div> 
+</div>

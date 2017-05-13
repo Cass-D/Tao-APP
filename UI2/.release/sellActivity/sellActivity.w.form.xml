@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/window/window" design="device:m;" xid="window" class="window cINFFZj" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cINFFZj" components="$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/labelEdit/labelEdit,$model/UI2/system/components/justep/row/row,$model/UI2/system/components/justep/panel/panel,$model/UI2/system/components/justep/panel/child,$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/window/window,$model/UI2/system/components/justep/data/baasData,$model/UI2/system/components/justep/titleBar/titleBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/input/input,">
+  <xhtml:style xmlns:xhtml="http://www.w3.org/1999/xhtml">null</xhtml:style>  
+  <div component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" __cid="cINFFZj" class="cINFFZj"></div>  
+  <div component="$model/UI2/system/components/justep/panel/panel" class="x-panel x-full p25484d06ba5045e593fc6b202e6999a0-iosstatusbar cINFFZj" xid="panel1" data-bind="component:{name:'$model/UI2/system/components/justep/panel/panel'}" __cid="cINFFZj"> 
+    <div class="x-panel-top cINFFZj" xid="top1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cINFFZj"> 
+      <div component="$model/UI2/system/components/justep/titleBar/titleBar" class="x-titlebar cINFFZj" data-bind="component:{name:'$model/UI2/system/components/justep/titleBar/titleBar'}" data-config="{&quot;title&quot;:&quot;输入商品信息&quot;}" __cid="cINFFZj"> 
+        <div class="x-titlebar-left cINFFZj" __cid="cINFFZj"> 
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-only-icon cINFFZj" xid="backBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'window.close'}" data-config="{&quot;icon&quot;:&quot;icon-chevron-left&quot;,&quot;label&quot;:&quot;&quot;}" __cid="cINFFZj"> 
+            <i class="icon-chevron-left cINFFZj" __cid="cINFFZj"/>  
+            <span __cid="cINFFZj" class="cINFFZj"/> 
+          </a> 
+        </div>  
+        <div class="x-titlebar-title cINFFZj" __cid="cINFFZj">输入商品信息</div>  
+        <div class="x-titlebar-right  cINFFZj" __cid="cINFFZj">
+          <div class="empty cINFFZj" __cid="cINFFZj"/>
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-only-icon cINFFZj" xid="saveBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:saveBtnClick" data-config="{&quot;icon&quot;:&quot;icon-android-checkmark&quot;,&quot;label&quot;:&quot;确定&quot;}" __cid="cINFFZj"> 
+            <i xid="i1" class="icon-android-checkmark cINFFZj" __cid="cINFFZj"/>  
+            <span xid="span1" __cid="cINFFZj" class="cINFFZj">确定</span>
+          </a>
+        </div> 
+      </div> 
+    </div>  
+    <div class="x-panel-content cINFFZj" xid="content1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cINFFZj"> 
+      <div component="$model/UI2/system/components/justep/row/row" class="x-row cINFFZj" xid="row1" data-bind="component:{name:'$model/UI2/system/components/justep/row/row'}" __cid="cINFFZj"> 
+        <div class="x-col cINFFZj" xid="col1" __cid="cINFFZj">
+          <div xid="shopinfoDiv" __cid="cINFFZj" class="cINFFZj"> 
+            <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30 cINFFZj" xid="labelInput1" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}" __cid="cINFFZj"> 
+              <label class="x-label cINFFZj" xid="label1" __cid="cINFFZj">商品名</label>  
+              <input component="$model/UI2/system/components/justep/input/input" class="form-control x-edit cINFFZj" xid="Name" data-bind="component:{name:'$model/UI2/system/components/justep/input/input'}" data-config="{&quot;dataType&quot;:&quot;String&quot;,&quot;pattern&quot;:&quot;^[\\u4E00-\\u9FA5A-Za-z0-9_]+$&quot;}" __cid="cINFFZj"/>
+            </div>  
+            <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30 cINFFZj" xid="labelInput2" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}" __cid="cINFFZj"> 
+              <label class="x-label cINFFZj" xid="label3" __cid="cINFFZj">价格</label>  
+              <input component="$model/UI2/system/components/justep/input/input" class="form-control x-edit cINFFZj" xid="Price" data-bind="component:{name:'$model/UI2/system/components/justep/input/input'}" data-config="{&quot;dataType&quot;:&quot;Float&quot;,&quot;format&quot;:&quot;0,000.00&quot;,&quot;pattern&quot;:&quot;^[0-9]+([.]{1}[0-9]{1,2})?$&quot;,&quot;placeHolder&quot;:&quot;0.00&quot;}" __cid="cINFFZj"/>
+            </div>  
+            <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30 cINFFZj" xid="labelInput3" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}" __cid="cINFFZj"> 
+              <label class="x-label cINFFZj" xid="label6" __cid="cINFFZj">简介</label>  
+              <input component="$model/UI2/system/components/justep/input/input" class="form-control x-edit cINFFZj" xid="Des" data-bind="component:{name:'$model/UI2/system/components/justep/input/input'}" data-config="{&quot;placeHolder&quot;:&quot;简单介绍商品情况&quot;}" __cid="cINFFZj"/>
+            </div>
+            <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30 cINFFZj" xid="labelEdit4" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}" __cid="cINFFZj"> 
+              <label class="x-label cINFFZj" xid="label7" __cid="cINFFZj">类别</label>  
+              <input component="$model/UI2/system/components/justep/input/input" class="form-control x-edit cINFFZj" xid="Category" data-bind="component:{name:'$model/UI2/system/components/justep/input/input'}" data-config="{&quot;pattern&quot;:&quot;^[\\u4e00-\\u9fa5]&quot;,&quot;placeHolder&quot;:&quot;请输入类别&quot;}" __cid="cINFFZj"/>
+            </div>  
+            <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30 cINFFZj" xid="labelEdit1" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}" __cid="cINFFZj"> 
+              <label class="x-label cINFFZj" xid="label2" __cid="cINFFZj">详细描述</label>  
+              <input component="$model/UI2/system/components/justep/input/input" class="form-control x-edit cINFFZj" xid="Detail" data-bind="component:{name:'$model/UI2/system/components/justep/input/input'}" data-config="{&quot;pattern&quot;:&quot;^[\\u4E00-\\u9FA5A-Za-z0-9_]+$&quot;,&quot;placeHolder&quot;:&quot;请输入商品详细描述&quot;}" __cid="cINFFZj"/>
+            </div>
+            <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30 cINFFZj" xid="labelEdit2" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}" __cid="cINFFZj"> 
+              <label class="x-label cINFFZj" xid="label4" __cid="cINFFZj">联系人</label>  
+              <input component="$model/UI2/system/components/justep/input/input" class="form-control x-edit cINFFZj" xid="Username" data-bind="component:{name:'$model/UI2/system/components/justep/input/input'}" data-config="{&quot;placeHolder&quot;:&quot;请输入联系人名字&quot;}" __cid="cINFFZj"/>
+            </div>  
+            <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30 cINFFZj" xid="labelEdit3" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}" __cid="cINFFZj"> 
+              <label class="x-label cINFFZj" xid="label5" __cid="cINFFZj">联系方式</label>  
+              <input component="$model/UI2/system/components/justep/input/input" class="form-control x-edit  cINFFZj" xid="Userphone" data-bind="component:{name:'$model/UI2/system/components/justep/input/input'}" data-config="{&quot;dataType&quot;:&quot;Integer&quot;,&quot;pattern&quot;:&quot;^(13[0-9]|14(5|7)|15(0|1|2|3|5|6|7|8|9)|18[0-9])\\d{8}$&quot;,&quot;placeHolder&quot;:&quot;请输入号码&quot;}" __cid="cINFFZj"/>
+            </div> 
+          </div>
+        </div>
+      </div> 
+    </div>  
+    <style __cid="cINFFZj" class="cINFFZj">.x-panel.p25484d06ba5045e593fc6b202e6999a0-iosstatusbar &gt;.x-panel-top {height: 48px;}.x-panel.p25484d06ba5045e593fc6b202e6999a0-iosstatusbar &gt;.x-panel-content { top: 48px;bottom: nullpx;}.x-panel.p25484d06ba5045e593fc6b202e6999a0-iosstatusbar &gt;.x-panel-bottom {height: nullpx;}.iosstatusbar .x-panel.p25484d06ba5045e593fc6b202e6999a0-iosstatusbar &gt;.x-panel-top,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.p25484d06ba5045e593fc6b202e6999a0-iosstatusbar &gt;.x-panel-top {height: 68px;}.iosstatusbar .x-panel.p25484d06ba5045e593fc6b202e6999a0-iosstatusbar &gt;.x-panel-content,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.p25484d06ba5045e593fc6b202e6999a0-iosstatusbar &gt;.x-panel-content { top: 68px;}.iosstatusbar .x-panel .x-panel-content .x-panel.p25484d06ba5045e593fc6b202e6999a0-iosstatusbar &gt;.x-panel-top {height: 48px;}.iosstatusbar .x-panel .x-panel-content .x-panel.p25484d06ba5045e593fc6b202e6999a0-iosstatusbar &gt;.x-panel-content {top: 48px;}</style>
+  </div> 
+</div>

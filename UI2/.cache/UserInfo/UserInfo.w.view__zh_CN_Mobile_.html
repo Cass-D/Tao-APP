@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/window/window" design="device:m;" xid="window" class="window c6nuQv2" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="c6nuQv2" components="$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/labelEdit/labelEdit,$model/UI2/system/components/justep/panel/panel,$model/UI2/system/components/justep/panel/child,$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/window/window,$model/UI2/system/components/justep/data/baasData,$model/UI2/system/components/justep/titleBar/titleBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/input/input,">  
+  <style xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml">null</style>  
+  <div xmlns="" component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" __cid="c6nuQv2" class="c6nuQv2"/>  
+  <div xmlns="" component="$model/UI2/system/components/justep/panel/panel" class="x-panel x-full pc40ad190723b4e13981ce6d40eee633e-iosstatusbar c6nuQv2" xid="panel1" data-bind="component:{name:'$model/UI2/system/components/justep/panel/panel'}" __cid="c6nuQv2"> 
+    <div class="x-panel-top c6nuQv2" xid="top1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="c6nuQv2"> 
+      <div component="$model/UI2/system/components/justep/titleBar/titleBar" class="x-titlebar c6nuQv2" data-bind="component:{name:'$model/UI2/system/components/justep/titleBar/titleBar'}" data-config="{&quot;title&quot;:&quot;修改个人信息&quot;}" __cid="c6nuQv2"> 
+        <div class="x-titlebar-left c6nuQv2" __cid="c6nuQv2"> 
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-only-icon c6nuQv2" xid="backBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'window.close'}" data-config="{&quot;icon&quot;:&quot;icon-chevron-left&quot;,&quot;label&quot;:&quot;&quot;}" __cid="c6nuQv2"> 
+            <i class="icon-chevron-left c6nuQv2" __cid="c6nuQv2"/>  
+            <span __cid="c6nuQv2" class="c6nuQv2"/> 
+          </a> 
+        </div>  
+        <div class="x-titlebar-title c6nuQv2" __cid="c6nuQv2">修改个人信息</div>  
+        <div class="x-titlebar-right  c6nuQv2" __cid="c6nuQv2"> 
+          <div class="empty c6nuQv2" __cid="c6nuQv2"/>  
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-only-icon c6nuQv2" xid="okBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:okBtnClick" data-config="{&quot;icon&quot;:&quot;icon-android-checkmark&quot;,&quot;label&quot;:&quot;确定&quot;}" __cid="c6nuQv2"> 
+            <i xid="i1" class="icon-android-checkmark c6nuQv2" __cid="c6nuQv2"/>  
+            <span xid="span1" __cid="c6nuQv2" class="c6nuQv2">确定</span> 
+          </a> 
+        </div> 
+      </div> 
+    </div>  
+    <div class="x-panel-content c6nuQv2" xid="content1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="c6nuQv2"> 
+      <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30 c6nuQv2" xid="labelInput1" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}" __cid="c6nuQv2"> 
+        <label class="x-label c6nuQv2" xid="label1" __cid="c6nuQv2">用户名</label>  
+        <input component="$model/UI2/system/components/justep/input/input" class="form-control x-edit c6nuQv2" xid="username" data-bind="component:{ref:userinfo.ref('username'),name:'$model/UI2/system/components/justep/input/input'}" data-config="{&quot;pattern&quot;:&quot;^[\\u4E00-\\u9FA5A-Za-z0-9_]+$&quot;,&quot;placeHolder&quot;:&quot;请输入用户名&quot;}" __cid="c6nuQv2"/> 
+      </div>  
+      <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30 c6nuQv2" xid="labelEdit3" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}" __cid="c6nuQv2"> 
+        <label class="x-label c6nuQv2" xid="label5" __cid="c6nuQv2">联系方式</label>  
+        <input component="$model/UI2/system/components/justep/input/input" class="form-control x-edit c6nuQv2" xid="phone" data-bind="component:{ref:userinfo.ref('phone'),name:'$model/UI2/system/components/justep/input/input'}" data-config="{&quot;pattern&quot;:&quot;^[0-9]+([.]{1}[0-9]{1,2})?$&quot;,&quot;placeHolder&quot;:&quot;请输入号码&quot;}" __cid="c6nuQv2"/> 
+      </div>  
+      <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30 c6nuQv2" xid="labelInput3" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}" __cid="c6nuQv2"> 
+        <label class="x-label c6nuQv2" xid="label6" __cid="c6nuQv2">地址(学校)</label>  
+        <input component="$model/UI2/system/components/justep/input/input" class="form-control x-edit c6nuQv2" xid="school" data-bind="component:{ref:userinfo.ref('school'),name:'$model/UI2/system/components/justep/input/input'}" data-config="{&quot;placeHolder&quot;:&quot;请输入地址&quot;}" __cid="c6nuQv2"/> 
+      </div>  
+      <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30 c6nuQv2" xid="labelEdit1" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}" __cid="c6nuQv2"> 
+        <label class="x-label c6nuQv2" xid="label2" __cid="c6nuQv2">专业</label>  
+        <input component="$model/UI2/system/components/justep/input/input" class="form-control x-edit c6nuQv2" xid="professional" data-bind="component:{ref:userinfo.ref('professional'),name:'$model/UI2/system/components/justep/input/input'}" data-config="{&quot;pattern&quot;:&quot;^[\\u4E00-\\u9FA5A-Za-z0-9_]+$&quot;,&quot;placeHolder&quot;:&quot;请输入专业名称（如无，可不填写）&quot;}" __cid="c6nuQv2"/> 
+      </div>  
+      <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30 c6nuQv2" xid="labelEdit2" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}" __cid="c6nuQv2"> 
+        <label class="x-label c6nuQv2" xid="label3" __cid="c6nuQv2">院系</label>  
+        <input component="$model/UI2/system/components/justep/input/input" class="form-control x-edit c6nuQv2" xid="court" data-bind="component:{ref:userinfo.ref('court'),name:'$model/UI2/system/components/justep/input/input'}" data-config="{&quot;pattern&quot;:&quot;^[\\u4E00-\\u9FA5A-Za-z0-9_]+$&quot;,&quot;placeHolder&quot;:&quot;请输入院系（如无，可不填写）&quot;}" __cid="c6nuQv2"/> 
+      </div>  
+      <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30 c6nuQv2" xid="labelEdit4" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}" __cid="c6nuQv2"> 
+        <label class="x-label c6nuQv2" xid="label4" __cid="c6nuQv2">邮箱</label>  
+        <input component="$model/UI2/system/components/justep/input/input" class="form-control x-edit c6nuQv2" xid="email" data-bind="component:{ref:userinfo.ref('email'),name:'$model/UI2/system/components/justep/input/input'}" data-config="{&quot;placeHolder&quot;:&quot;请输入邮箱（如无，可不填写）&quot;}" __cid="c6nuQv2"/> 
+      </div> 
+    </div>  
+    <style __cid="c6nuQv2" class="c6nuQv2">.x-panel.pc40ad190723b4e13981ce6d40eee633e-iosstatusbar &gt;.x-panel-top {height: 48px;}.x-panel.pc40ad190723b4e13981ce6d40eee633e-iosstatusbar &gt;.x-panel-content { top: 48px;bottom: nullpx;}.x-panel.pc40ad190723b4e13981ce6d40eee633e-iosstatusbar &gt;.x-panel-bottom {height: nullpx;}.iosstatusbar .x-panel.pc40ad190723b4e13981ce6d40eee633e-iosstatusbar &gt;.x-panel-top,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pc40ad190723b4e13981ce6d40eee633e-iosstatusbar &gt;.x-panel-top {height: 68px;}.iosstatusbar .x-panel.pc40ad190723b4e13981ce6d40eee633e-iosstatusbar &gt;.x-panel-content,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pc40ad190723b4e13981ce6d40eee633e-iosstatusbar &gt;.x-panel-content { top: 68px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pc40ad190723b4e13981ce6d40eee633e-iosstatusbar &gt;.x-panel-top {height: 48px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pc40ad190723b4e13981ce6d40eee633e-iosstatusbar &gt;.x-panel-content {top: 48px;}</style> 
+  </div> 
+</div>
